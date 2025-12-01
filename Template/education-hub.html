@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Hub | Freelancer's Colony</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Education Hub Specific Styles */
+        .path-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .path-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .path-header {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .path-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .path-card:hover .path-header img {
+            transform: scale(1.1);
+        }
+        
+        .path-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .path-body {
+            padding: 25px;
+        }
+        
+        .path-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .path-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .path-duration, .path-level {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .path-description {
+            margin-bottom: 20px;
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+        
+        .path-modules {
+            margin-bottom: 25px;
+        }
+        
+        .module-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .module-item:last-child {
+            border-bottom: none;
+        }
+        
+        .module-icon {
+            width: 30px;
+            height: 30px;
+            background-color: rgba(255, 107, 0, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .module-icon i {
+            color: var(--secondary-color);
+            font-size: 0.8rem;
+        }
+        
+        .path-cta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .path-price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .path-details {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 50px;
+        }
+        
+        .path-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .benefit-icon {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+        
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .path-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .path-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .path-details {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed Header -->
+    <header class="fixed-header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html"><span class="orange-text">Freelancer's</span> Colony</a>
+            </div>
+            
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#resources">Resources</a></li>
+                    <li><a href="../index.html#store">Store</a></li>
+                    <li><a href="education.html">Education Hub</a></li>
+                    <li><a href="../index.html#content">Content</a></li>
+                </ul>
+                
+                <div class="menu-icon" id="menuIcon">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#resources">Resources</a></li>
+                <li><a href="../index.html#store">Store</a></li>
+                <li><a href="education.html">Education Hub</a></li>
+                <li><a href="../index.html#content">Content</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="education-hub">
+        <!-- Hero Section -->
+        <section class="education-hero">
+            <div class="container">
+                <h1>Freelancer <span class="orange-text">Education Hub</span></h1>
+                <p>Master in-demand skills with our comprehensive learning paths designed for freelancers</p>
+            </div>
+        </section>
+
+        <!-- Learning Paths Section -->
+        <section class="learning-paths">
+            <div class="container">
+                <h2 class="section-title">Choose Your <span class="orange-text">Learning Path</span></h2>
+                <p class="section-subtitle">Browse our specialized tracks and start your journey to freelancing mastery</p>
+                
+                <div class="path-grid">
+                    <!-- Web Development Path -->
+                    <div class="path-card" id="web-dev">
+                        <div class="path-header">
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Web Development">
+                            <span class="path-tag">Most Popular</span>
+                        </div>
+                        <div class="path-body">
+                            <h3 class="path-title">Web Development</h3>
+                            <div class="path-meta">
+                                <span class="path-duration"><i class="far fa-clock"></i> 8 Weeks</span>
+                                <span class="path-level"><i class="fas fa-signal"></i> Beginner to Advanced</span>
+                            </div>
+                            <p class="path-description">Master the art of building modern, responsive websites and web applications with this comprehensive path.</p>
+                            <div class="path-modules">
+                                <div class="module-item">
+                                    <div class="module-icon"><i class="fas fa-check"></i></div>
+                                    <span>HTML5 & CSS3 Fundamentals</span>
+                                </div>
+                                <div class="module-item">
+                                    <div class="module-icon"><i class="fas fa-check"></i></div>
+                                    <span>JavaScript & React.js</span>
+                                </div>
+                                <div class="module-item">
+                                    <div class="module-icon"><i class="fas fa-check"></i></div>
+                                    <span>Backend with Node.js</span>
+                                </div>
+                            </div>
+                            <div class="path-cta">
+                                <span class="path-price">$199</span>
+                                <a href="#web-dev-details" class="btn btn-small">Explore Path</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Graphic Design Path -->
+                    <div class="path-card" id="graphic-design">
+                        <div class="path-header">
+                            <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Graphic Design">
+                            <span class="path-tag">Creative</span>
+                        </div>
+                        <div class="path-body">
+                            <h3 class="path-title">Graphic Design & Digital Art</h3>
+                            <div class="path-meta">
+                                <span class="path-duration"><i class="far fa-clock"></i> 6 Weeks</span>
+                                <span class="path-level"><i class="fas fa-signal"></i> All Levels</span>
+                            </div>
+                            <p class="path-description">Develop stunning visual content and master industry-standard design tools for print and digital media.</p>
+                            <div class="path-modules">
+                                <div class="module-item">
+                                    <div class="module-icon"><i class="fas fa-check"></i></div>
+                                    <span>Adobe Photoshop Mastery</span>
+                                </div>
+                                <div class="module-item">
+                                    <div class="module-icon"><i class="fas fa-check"></i></div>
+                                    <span>Illustrator for Vector Art</span>
+                                </div>
+                                <div class="module-item">
+                                    <div class="module-icon"><i class="fas fa-check"></i></div>
+                                    <span>Branding & Identity Design</span>
+                                </div>
+                            </div>
+                            <div class="path-cta">
+                                <span class="path-price">$179</span>
+                                <a href="#graphic-design-details" class="btn btn-small">Explore Path</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- AI Generative Path -->
+                    <div class="path-card" id="ai-generative">
+                        <div class="path-header">
+                            <img src="https://images.unsplash.com/photo-1677442135136-760c813cd6d6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="AI Generative">
+                            <span class="path-tag">Cutting Edge</span>
+                        </div>
+                        <div class="path-body">
+                            <h3 class="path-title">AI Generative Ideas</h3>
+                            <div class="path-meta">
+                                <span class="path-duration"><i class="far fa-clock"></i> 4 Weeks</span>
+                                <span class="path-level"><i class="fas fa-signal"></i> Intermediate</span>
+                            </div>
+                            <p class="path-description">Harness the power of artificial intelligence to generate innovative ideas, content, and creative solutions.</p>
+                            <div class="path-modules">
+                                <div class="module-item">
+                                    <div class="module-icon"><i class="fas fa-check"></i></div>
+                                    <span>AI Content Generation</span>
+                                </div>
+                                <div class="module-item">
+                                    <div class="module-icon"><i class="fas fa-check"></i></div>
+                                    <span>Image Generation with Midjourney</span>
+                                </div>
+                                <div class="module-item">
+                                    <div class="module-icon"><i class="fas fa-check"></i></div>
+                                    <span>Automation with AI Tools</span>
+                                </div>
+                            </div>
+                            <div class="path-cta">
+                                <span class="path-price">$149</span>
+                                <a href="#ai-generative-details" class="btn btn-small">Explore Path</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Video Editing Path -->
+                    <div class="path-card" id="video-editing">
+                        <div class="path-header">
+                            <img src="https://images.unsplash.com/photo-1551806235-6696cbf70f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Video Editing">
+                            <span class="path-tag">Hands-on</span>
+                        </div>
+                        <div class="path-body">
+                            <h3 class="path-title">Video Editing Mastery</h3>
+                            <div class="path-meta">
+                                <span class="path-duration"><i class="far fa-clock"></i> 5 Weeks</span>
+                                <span class="path-level"><i class="fas fa-signal"></i> Beginner to Pro</span>
+                            </div>
+                            <p class="path-description">Learn professional video editing techniques to create compelling content for clients and social media.</p>
+                            <div class="path-modules">
+                                <div class="module-item">
+                                    <div class="module-icon"><i class="fas fa-check"></i></div>
+                                    <span>Premiere Pro Fundamentals</span>
+                                </div>
+                                <div class="module-item">
+                                    <div class="module-icon"><i class="fas fa-check"></i></div>
+                                    <span>After Effects for Motion Graphics</span>
+                                </div>
+                                <div class="module-item">
+                                    <div class="module-icon"><i class="fas fa-check"></i></div>
+                                    <span>Color Grading & Sound Design</span>
+                                </div>
+                            </div>
+                            <div class="path-cta">
+                                <span class="path-price">$169</span>
+                                <a href="#video-editing-details" class="btn btn-small">Explore Path</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Path Details Sections -->
+        <!-- Web Development Details -->
+        <section class="path-details-section" id="web-dev-details">
+            <div class="container">
+                <h2 class="section-title">Web Development <span class="orange-text">Learning Path</span></h2>
+                
+                <!-- YouTube Video Embed -->
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/ysEN5RaKOlA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                
+                <div class="path-details">
+                    <h3>Master Modern Web Development</h3>
+                    <p>This comprehensive path takes you from absolute beginner to job-ready web developer. You'll learn to build responsive websites, interactive web applications, and understand both front-end and back-end development.</p>
+                    
+                    <h4>What You'll Learn:</h4>
+                    <div class="path-benefits">
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><i class="fas fa-laptop-code"></i></div>
+                            <div>
+                                <h5>Frontend Development</h5>
+                                <p>HTML5, CSS3, JavaScript, React.js, and responsive design principles</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><i class="fas fa-server"></i></div>
+                            <div>
+                                <h5>Backend Development</h5>
+                                <p>Node.js, Express, databases (SQL & NoSQL), and API development</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><i class="fas fa-mobile-alt"></i></div>
+                            <div>
+                                <h5>Responsive Design</h5>
+                                <p>Create websites that work perfectly on all devices and screen sizes</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><i class="fas fa-rocket"></i></div>
+                            <div>
+                                <h5>Deployment</h5>
+                                <p>Learn to deploy your applications to cloud platforms</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4>Who This Is For:</h4>
+                    <ul class="path-benefits">
+                        <li>Beginners with no coding experience</li>
+                        <li>Designers looking to add development skills</li>
+                        <li>Professionals wanting to switch careers</li>
+                        <li>Freelancers wanting to offer web development services</li>
+                    </ul>
+                    
+                    <h4>Student Testimonials:</h4>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            "This path completely transformed my career. I went from knowing nothing about coding to landing my first web development client within 3 months of starting the course. The project-based approach was exactly what I needed."
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah K.">
+                            <div class="author-info">
+                                <h4>Sarah K.</h4>
+                                <p>Freelance Web Developer</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <a href="#" class="btn btn-large">Enroll Now - $199</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Graphic Design Details -->
+        <section class="path-details-section" id="graphic-design-details">
+            <div class="container">
+                <h2 class="section-title">Graphic Design & Digital Art <span class="orange-text">Learning Path</span></h2>
+                
+                <!-- YouTube Video Embed -->
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/ZYV6dYtz4HA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                
+                <div class="path-details">
+                    <h3>Become a Professional Designer</h3>
+                    <p>This path teaches you the principles of design, how to use industry-standard tools, and how to develop your unique creative style. You'll complete real-world projects to build your portfolio.</p>
+                    
+                    <h4>What You'll Learn:</h4>
+                    <div class="path-benefits">
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><i class="fas fa-paint-brush"></i></div>
+                            <div>
+                                <h5>Design Principles</h5>
+                                <p>Color theory, typography, layout, and composition</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><i class="fas fa-image"></i></div>
+                            <div>
+                                <h5>Adobe Creative Suite</h5>
+                                <p>Photoshop, Illustrator, and InDesign for professional work</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><i class="fas fa-bullhorn"></i></div>
+                            <div>
+                                <h5>Branding</h5>
+                                <p>Create cohesive brand identities for businesses</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><i class="fas fa-pencil-ruler"></i></div>
+                            <div>
+                                <h5>Digital Illustration</h5>
+                                <p>Develop your drawing skills for digital media</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4>Who This Is For:</h4>
+                    <ul class="path-benefits">
+                        <li>Aspiring graphic designers</li>
+                        <li>Artists wanting to transition to digital</li>
+                        <li>Marketers needing design skills</li>
+                        <li>Freelancers wanting to offer design services</li>
+                    </ul>
+                    
+                    <h4>Student Testimonials:</h4>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            "The structured approach to learning design principles while mastering the tools was perfect. I now have a steady stream of clients needing logos, branding, and marketing materials. This course paid for itself many times over."
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Marcus T.">
+                            <div class="author-info">
+                                <h4>Marcus T.</h4>
+                                <p>Freelance Designer</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <a href="#" class="btn btn-large">Enroll Now - $179</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- AI Generative Details -->
+        <section class="path-details-section" id="ai-generative-details">
+            <div class="container">
+                <h2 class="section-title">AI Generative Ideas <span class="orange-text">Learning Path</span></h2>
+                
+                <!-- YouTube Video Embed -->
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/EJ7O6W5Qo4M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                
+                <div class="path-details">
+                    <h3>Harness the Power of AI</h3>
+                    <p>This cutting-edge path teaches you how to leverage artificial intelligence tools to generate ideas, content, and creative solutions for your freelance business or clients.</p>
+                    
+                    <h4>What You'll Learn:</h4>
+                    <div class="path-benefits">
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><i class="fas fa-robot"></i></div>
+                            <div>
+                                <h5>AI Content Generation</h5>
+                                <p>Use tools like ChatGPT for writing, ideation, and content planning</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><i class="fas fa-image"></i></div>
+                            <div>
+                                <h5>AI Image Creation</h5>
+                                <p>Master Midjourney, Stable Diffusion for visual content</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><i class="fas fa-cogs"></i></div>
+                            <div>
+                                <h5>Workflow Automation</h5>
+                                <p>Automate repetitive tasks with AI tools</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><i class="fas fa-lightbulb"></i></div>
+                            <div>
+                                <h5>Idea Generation</h5>
+                                <p>Use AI to brainstorm and develop creative concepts</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4>Who This Is For:</h4>
+                    <ul class="path-benefits">
+                        <li>Content creators wanting to enhance productivity</li>
+                        <li>Designers exploring AI-assisted creation</li>
+                        <li>Writers looking to overcome creative blocks</li>
+                        <li>Freelancers wanting cutting-edge skills</li>
+                    </ul>
+                    
+                    <h4>Student Testimonials:</h4>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            "This course opened my eyes to how AI can enhance my creative process rather than replace it. I now use AI tools to generate ideas and first drafts, which saves me hours each week while improving my output quality."
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya M.">
+                            <div class="author-info">
+                                <h4>Priya M.</h4>
+                                <p>Content Creator</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <a href="#" class="btn btn-large">Enroll Now - $149</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Video Editing Details -->
+        <section class="path-details-section" id="video-editing-details">
+            <div class="container">
+                <h2 class="section-title">Video Editing Mastery <span class="orange-text">Learning Path</span></h2>
+                
+                <!-- YouTube Video Embed -->
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/G5g8zM9Jh2Y" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                
+                <div class="path-details">
+                    <h3>Edit Like a Professional</h3>
+                    <p>This hands-on path teaches you professional video editing techniques using industry-standard software. You'll learn to tell compelling stories through video for clients, social media, or your own projects.</p>
+                    
+                    <h4>What You'll Learn:</h4>
+                    <div class="path-benefits">
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><i class="fas fa-film"></i></div>
+                            <div>
+                                <h5>Editing Fundamentals</h5>
+                                <p>Cutting, sequencing, pacing, and storytelling</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><i class="fas fa-photo-video"></i></div>
+                            <div>
+                                <h5>Adobe Premiere Pro</h5>
+                                <p>Master this industry-standard editing software</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><i class="fas fa-magic"></i></div>
+                            <div>
+                                <h5>Motion Graphics</h5>
+                                <p>Create dynamic titles and animations in After Effects</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><i class="fas fa-headphones"></i></div>
+                            <div>
+                                <h5>Audio & Color</h5>
+                                <p>Professional sound design and color grading</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4>Who This Is For:</h4>
+                    <ul class="path-benefits">
+                        <li>Aspiring video editors</li>
+                        <li>Content creators wanting professional skills</li>
+                        <li>Marketers needing video production abilities</li>
+                        <li>Freelancers offering video services</li>
+                    </ul>
+                    
+                    <h4>Student Testimonials:</h4>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            "The practical projects in this course gave me the confidence to start taking on video editing clients. I went from basic cuts to creating professional-looking videos with motion graphics and color grading in just a few months."
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Jamal R.">
+                            <div class="author-info">
+                                <h4>Jamal R.</h4>
+                                <p>Video Editor</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <a href="#" class="btn btn-large">Enroll Now - $169</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="education-cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Transform Your Freelance Career?</h2>
+                    <p>Choose your path and gain the skills to succeed in today's competitive market</p>
+                    <a href="#" class="btn btn-large">Browse All Learning Paths</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Freelancer's Colony</h3>
+                    <p>Empowering freelancers with education, resources, and community support.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Learning Paths</h3>
+                    <ul>
+                        <li><a href="#web-dev-details">Web Development</a></li>
+                        <li><a href="#graphic-design-details">Graphic Design</a></li>
+                        <li><a href="#ai-generative-details">AI Generative</a></li>
+                        <li><a href="#video-editing-details">Video Editing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="#">Technical Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="../index.html#about">About Michael Edet</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Freelancer's Colony. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script>
+        // Education Hub Specific JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for path links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Highlight the selected path
+                        if(targetId.includes('-details')) {
+                            const pathId = targetId.replace('-details', '');
+                            const pathCards = document.querySelectorAll('.path-card');
+                            pathCards.forEach(card => card.classList.remove('active-path'));
+                            
+                            const activeCard = document.querySelector(pathId);
+                            if(activeCard) {
+                                activeCard.classList.add('active-path');
+                            }
+                        }
+                    }
+                });
+            });
+            
+            // Set current year in footer
+            document.getElementById('year').textContent = new Date().getFullYear();
+            
+            // Simulate enrollment
+            const enrollButtons = document.querySelectorAll('.btn-large');
+            enrollButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    if(this.href === '#') {
+                        e.preventDefault();
+                        const pathTitle = this.closest('.path-details').querySelector('h3').textContent;
+                        alert(`You would be enrolled in: ${pathTitle}\n\nIn a full implementation, this would redirect to checkout or enrollment.`);
+                    }
+                });
+            });
+            
+            // Mobile menu toggle
+            const menuIcon = document.getElementById('menuIcon');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            menuIcon.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+            });
+            
+            // Close mobile menu when clicking on a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

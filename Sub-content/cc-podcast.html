@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scaling Your Freelance Business | Podcast | Freelancer's Colony</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        /* Simplified Podcast Styles */
+        .podcast-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .podcast-header {
+            text-align: center;
+            margin: 80px 0 40px;
+        }
+        
+        .podcast-category {
+            display: inline-block;
+            background: #FF6B00;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .podcast-title {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        
+        .podcast-meta {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            color: #666;
+        }
+        
+        .podcast-player {
+            width: 100%;
+            background: #f5f5f5;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .player-placeholder {
+            width: 100%;
+            height: 100px;
+            background: #ddd;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .player-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .player-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #FF6B00;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        
+        .podcast-content {
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+        
+        .podcast-content h2 {
+            font-size: 1.5rem;
+            margin: 40px 0 20px;
+            color: #000;
+        }
+        
+        .podcast-content p {
+            margin-bottom: 20px;
+        }
+        
+        .episode-details {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 40px 0;
+        }
+        
+        .download-options {
+            margin: 30px 0;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: #000;
+            color: white;
+            border-radius: 5px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .podcast-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 50px 0;
+        }
+        
+        .host-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin: 60px 0;
+            padding: 30px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+        
+        .host-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .newsletter-section {
+            background: #000;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 30px auto 0;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            font-size: 1rem;
+        }
+        
+        .newsletter-button {
+            background: #FF6B00;
+            color: white;
+            border: none;
+            padding: 0 25px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .podcast-title {
+                font-size: 1.8rem;
+            }
+            
+            .podcast-meta {
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+            }
+            
+            .player-controls {
+                flex-wrap: wrap;
+            }
+            
+            .host-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-button {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed Header -->
+    <header class="fixed-header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html"><span class="orange-text">Freelancer's</span> Colony</a>
+            </div>
+            
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../content.html">Content</a></li>
+                    <li><a href="../podcasts.html">Podcasts</a></li>
+                    <li><a href="../about.html">About</a></li>
+                </ul>
+                
+                <div class="menu-icon" id="menuIcon">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../content.html">Content</a></li>
+                <li><a href="../podcasts.html">Podcasts</a></li>
+                <li><a href="../about.html">About</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="podcast-container">
+            <!-- Podcast Header -->
+            <header class="podcast-header">
+                <span class="podcast-category">Business Growth</span>
+                <h1 class="podcast-title">Scaling Your Freelance Business</h1>
+                <div class="podcast-meta">
+                    <span><i class="far fa-calendar orange-text"></i> May 28, 2023</span>
+                    <span><i class="fas fa-headphones orange-text"></i> 45 min</span>
+                    <span><i class="fas fa-download orange-text"></i> 1.2K downloads</span>
+                </div>
+            </header>
+
+            <!-- Podcast Player -->
+            <div class="podcast-player">
+                <div class="player-placeholder">
+                    <i class="fas fa-podcast" style="font-size: 2rem; color: #666;"></i>
+                </div>
+                <div class="player-controls">
+                    <div class="player-btn" id="playBtn">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="player-btn">
+                        <i class="fas fa-step-backward"></i>
+                    </div>
+                    <div class="player-btn">
+                        <i class="fas fa-step-forward"></i>
+                    </div>
+                    <div class="player-btn">
+                        <i class="fas fa-volume-up"></i>
+                    </div>
+                </div>
+                <div style="margin-top: 20px;">
+                    <input type="range" style="width: 100%;" value="0">
+                </div>
+            </div>
+
+            <!-- Podcast Content -->
+            <article class="podcast-content">
+                <h2>Episode Summary</h2>
+                <p>In this episode, we discuss proven strategies to scale your freelance business beyond the solo practitioner model. Learn how to:</p>
+                <ul>
+                    <li>Transition from freelancer to agency owner</li>
+                    <li>Build systems that allow your business to grow</li>
+                    <li>Hire and manage subcontractors effectively</li>
+                    <li>Create recurring revenue streams</li>
+                </ul>
+                
+                <div class="episode-details">
+                    <h3>Episode Highlights</h3>
+                    <ul>
+                        <li><strong>04:20</strong> - The mindset shift needed for scaling</li>
+                        <li><strong>12:45</strong> - When to consider hiring help</li>
+                        <li><strong>22:10</strong> - Pricing models for scaled services</li>
+                        <li><strong>35:30</strong> - Tools for managing a growing team</li>
+                    </ul>
+                </div>
+                
+                <h2>Featured Resources</h2>
+                <p>Mentioned in this episode:</p>
+                <ul>
+                    <li><a href="#">The E-Myth Revisited by Michael Gerber</a></li>
+                    <li><a href="#">Trello (Project Management Tool)</a></li>
+                    <li><a href="#">Wave Apps (Free Accounting Software)</a></li>
+                </ul>
+                
+                <div class="download-options">
+                    <h3>Download Options</h3>
+                    <a href="#" class="download-btn"><i class="fas fa-download"></i> MP3</a>
+                    <a href="#" class="download-btn"><i class="fas fa-download"></i> WAV</a>
+                    <a href="#" class="download-btn"><i class="fas fa-file-pdf"></i> Transcript</a>
+                </div>
+                
+                <div class="podcast-actions">
+                    <a href="#" class="btn btn-outline"><i class="fas fa-share-alt"></i> Share Episode</a>
+                    <a href="../podcasts.html" class="btn"><i class="fas fa-arrow-left"></i> All Episodes</a>
+                </div>
+                
+                <div class="host-card">
+                    <img src="https://via.placeholder.com/150" alt="Michael Edet" class="host-img">
+                    <div>
+                        <h3>About the Host</h3>
+                        <p><strong>Michael Edet</strong> is the creator of Freelancer's Colony and host of the Freelance Success Podcast. With over 8 years of freelancing experience, he's helped thousands of freelancers build sustainable businesses.</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+        <!-- Newsletter Section -->
+        <section class="newsletter-section">
+            <div class="newsletter-content">
+                <h2 class="newsletter-title">Never Miss an Episode</h2>
+                <p>Subscribe to get new podcast episodes delivered to your inbox.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" class="newsletter-input" required>
+                    <button type="submit" class="newsletter-button">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Freelancer's Colony</h3>
+                    <p>Helping freelancers thrive through education and community.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-spotify"></i></a>
+                        <a href="#"><i class="fab fa-apple"></i></a>
+                        <a href="#"><i class="fab fa-google"></i></a>
+                        <a href="#"><i class="fas fa-rss"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../podcasts.html">Podcasts</a></li>
+                        <li><a href="../content.html">Blog</a></li>
+                        <li><a href="../resources.html">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Freelancer's Colony. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('menuIcon').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        });
+        
+        // Podcast Player Controls
+        const playBtn = document.getElementById('playBtn');
+        playBtn.addEventListener('click', function() {
+            const icon = this.querySelector('i');
+            if (icon.classList.contains('fa-play')) {
+                icon.classList.remove('fa-play');
+                icon.classList.add('fa-pause');
+                alert('Podcast playback started');
+            } else {
+                icon.classList.remove('fa-pause');
+                icon.classList.add('fa-play');
+                alert('Podcast playback paused');
+            }
+        });
+        
+        // Newsletter Form Submission
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thanks for subscribing to our podcast newsletter!');
+            this.reset();
+        });
+        
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

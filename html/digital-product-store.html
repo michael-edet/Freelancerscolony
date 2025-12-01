@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Store | Freelancer's Colony</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        /* Additional Store-specific Styles */
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 2;
+        }
+        
+        .product-badge.new {
+            background-color: #00c853;
+        }
+        
+        .product-badge.bestseller {
+            background-color: #ff4081;
+        }
+        
+        .product-badge.limited {
+            background-color: #651fff;
+        }
+        
+        .rating {
+            color: #FFC107;
+            margin-bottom: 10px;
+        }
+        
+        .price-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .current-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: #777;
+        }
+        
+        .discount {
+            background-color: #ffeb3b;
+            color: #000;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed Header -->
+    <header class="fixed-header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html"><span class="orange-text">Freelancer's</span> Colony</a>
+            </div>
+            
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#resources">Resources</a></li>
+                    <li><a href="store.html">Store</a></li>
+                    <li><a href="../index.html#education">Education</a></li>
+                    <li><a href="../index.html#content">Content</a></li>
+                    <li><a href="cart.html" class="cart-link"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a></li>
+                </ul>
+                
+                <div class="menu-icon" id="menuIcon">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#resources">Resources</a></li>
+                <li><a href="store.html">Store</a></li>
+                <li><a href="../index.html#education">Education</a></li>
+                <li><a href="../index.html#content">Content</a></li>
+                <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="store-page">
+        <!-- Store Hero -->
+        <section class="store-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Freelancer <span class="orange-text">Digital Store</span></h1>
+                    <p>Premium digital products to elevate your freelancing business</p>
+                    <div class="hero-buttons">
+                        <a href="#featured" class="btn">Featured Products</a>
+                        <a href="#categories" class="btn btn-outline">Browse Categories</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section id="featured" class="featured-products">
+            <div class="container">
+                <h2 class="section-title"><span class="orange-text">Featured</span> Products</h2>
+                <div class="products-grid">
+                    <!-- Product 1 -->
+                    <div class="product-card">
+                        <div class="product-badge bestseller">Bestseller</div>
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/400x300" alt="Freelance Business Blueprint">
+                            <div class="quick-view">Quick View</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Freelance Business Blueprint</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(128)</span>
+                            </div>
+                            <p>Complete system for setting up and scaling your freelance business...</p>
+                            <div class="price-container">
+                                <span class="current-price">$49.99</span>
+                                <span class="original-price">$99.99</span>
+                                <span class="discount">50% OFF</span>
+                            </div>
+                            <div class="product-actions">
+                                <a href="#" class="btn btn-small add-to-cart">Add to Cart</a>
+                                <a href="product-details.html" class="btn btn-small btn-outline">Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-card">
+                        <div class="product-badge new">New</div>
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/400x300" alt="Client Acquisition System">
+                            <div class="quick-view">Quick View</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Client Acquisition System</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(64)</span>
+                            </div>
+                            <p>Proven strategies to attract high-paying clients consistently...</p>
+                            <div class="price-container">
+                                <span class="current-price">$39.99</span>
+                                <span class="original-price">$79.99</span>
+                                <span class="discount">50% OFF</span>
+                            </div>
+                            <div class="product-actions">
+                                <a href="#" class="btn btn-small add-to-cart">Add to Cart</a>
+                                <a href="product-details.html" class="btn btn-small btn-outline">Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-card">
+                        <div class="product-badge limited">Limited</div>
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/400x300" alt="Portfolio Power Pack">
+                            <div class="quick-view">Quick View</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Portfolio Power Pack</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(92)</span>
+                            </div>
+                            <p>Professional templates and frameworks to showcase your work...</p>
+                            <div class="price-container">
+                                <span class="current-price">$29.99</span>
+                                <span class="original-price">$59.99</span>
+                                <span class="discount">50% OFF</span>
+                            </div>
+                            <div class="product-actions">
+                                <a href="#" class="btn btn-small add-to-cart">Add to Cart</a>
+                                <a href="product-details.html" class="btn btn-small btn-outline">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Categories -->
+        <section id="categories" class="product-categories">
+            <div class="container">
+                <h2 class="section-title">Browse <span class="orange-text">Categories</span></h2>
+                <div class="categories-grid">
+                    <a href="#" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-book orange-text"></i>
+                        </div>
+                        <h3>eBooks & Guides</h3>
+                        <p>24 Products</p>
+                    </a>
+                    
+                    <a href="#" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-file-alt orange-text"></i>
+                        </div>
+                        <h3>Templates</h3>
+                        <p>18 Products</p>
+                    </a>
+                    
+                    <a href="#" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-video orange-text"></i>
+                        </div>
+                        <h3>Video Courses</h3>
+                        <p>15 Products</p>
+                    </a>
+                    
+                    <a href="#" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-tools orange-text"></i>
+                        </div>
+                        <h3>Tools & Kits</h3>
+                        <p>12 Products</p>
+                    </a>
+                    
+                    <a href="#" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-chart-line orange-text"></i>
+                        </div>
+                        <h3>Business Growth</h3>
+                        <p>9 Products</p>
+                    </a>
+                    
+                    <a href="#" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-music orange-text"></i>
+                        </div>
+                        <h3>Music Promotion</h3>
+                        <p>7 Products</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- All Products -->
+        <section class="all-products">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">All <span class="orange-text">Digital Products</span></h2>
+                    <div class="sort-options">
+                        <label for="sort">Sort by:</label>
+                        <select id="sort">
+                            <option value="popular">Most Popular</option>
+                            <option value="newest">Newest</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Highest Rated</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="products-grid">
+                    <!-- Product 4 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/400x300" alt="Freelance Finance Mastery">
+                            <div class="quick-view">Quick View</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Freelance Finance Mastery</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(47)</span>
+                            </div>
+                            <p>Complete guide to managing finances as a freelancer...</p>
+                            <div class="price-container">
+                                <span class="current-price">$27.99</span>
+                                <span class="original-price">$49.99</span>
+                                <span class="discount">44% OFF</span>
+                            </div>
+                            <div class="product-actions">
+                                <a href="#" class="btn btn-small add-to-cart">Add to Cart</a>
+                                <a href="product-details.html" class="btn btn-small btn-outline">Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="product-card">
+                        <div class="product-badge new">New</div>
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/400x300" alt="Content Creator's Toolkit">
+                            <div class="quick-view">Quick View</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Content Creator's Toolkit</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(36)</span>
+                            </div>
+                            <p>Everything you need to create engaging content...</p>
+                            <div class="price-container">
+                                <span class="current-price">$34.99</span>
+                                <span class="original-price">$69.99</span>
+                                <span class="discount">50% OFF</span>
+                            </div>
+                            <div class="product-actions">
+                                <a href="#" class="btn btn-small add-to-cart">Add to Cart</a>
+                                <a href="product-details.html" class="btn btn-small btn-outline">Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/400x300" alt="Time Management System">
+                            <div class="quick-view">Quick View</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Time Management System</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(78)</span>
+                            </div>
+                            <p>Boost productivity with our proven time management framework...</p>
+                            <div class="price-container">
+                                <span class="current-price">$24.99</span>
+                                <span class="original-price">$49.99</span>
+                                <span class="discount">50% OFF</span>
+                            </div>
+                            <div class="product-actions">
+                                <a href="#" class="btn btn-small add-to-cart">Add to Cart</a>
+                                <a href="product-details.html" class="btn btn-small btn-outline">Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 7 -->
+                    <div class="product-card">
+                        <div class="product-badge bestseller">Bestseller</div>
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/400x300" alt="Social Media Growth Pack">
+                            <div class="quick-view">Quick View</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Social Media Growth Pack</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(112)</span>
+                            </div>
+                            <p>Grow your audience with our social media strategies...</p>
+                            <div class="price-container">
+                                <span class="current-price">$29.99</span>
+                                <span class="original-price">$59.99</span>
+                                <span class="discount">50% OFF</span>
+                            </div>
+                            <div class="product-actions">
+                                <a href="#" class="btn btn-small add-to-cart">Add to Cart</a>
+                                <a href="product-details.html" class="btn btn-small btn-outline">Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 8 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/400x300" alt="Email Marketing Templates">
+                            <div class="quick-view">Quick View</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Email Marketing Templates</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                                <span>(53)</span>
+                            </div>
+                            <p>Convert more clients with our high-converting email templates...</p>
+                            <div class="price-container">
+                                <span class="current-price">$19.99</span>
+                                <span class="original-price">$39.99</span>
+                                <span class="discount">50% OFF</span>
+                            </div>
+                            <div class="product-actions">
+                                <a href="#" class="btn btn-small add-to-cart">Add to Cart</a>
+                                <a href="product-details.html" class="btn btn-small btn-outline">Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 9 -->
+                    <div class="product-card">
+                        <div class="product-badge new">New</div>
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/400x300" alt="Music Promotion Playbook">
+                            <div class="quick-view">Quick View</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Music Promotion Playbook</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(28)</span>
+                            </div>
+                            <p>Get your music heard with our proven promotion strategies...</p>
+                            <div class="price-container">
+                                <span class="current-price">$37.99</span>
+                                <span class="original-price">$74.99</span>
+                                <span class="discount">49% OFF</span>
+                            </div>
+                            <div class="product-actions">
+                                <a href="#" class="btn btn-small add-to-cart">Add to Cart</a>
+                                <a href="product-details.html" class="btn btn-small btn-outline">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="pagination">
+                    <a href="#" class="page-nav"><i class="fas fa-chevron-left"></i> Previous</a>
+                    <div class="page-numbers">
+                        <a href="#" class="active">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                    </div>
+                    <a href="#" class="page-nav">Next <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="store-testimonials">
+            <div class="container">
+                <h2 class="section-title">What <span class="orange-text">Clients Say</span></h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"The Freelance Business Blueprint completely transformed how I run my business. Worth every penny!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://via.placeholder.com/60" alt="Sarah J.">
+                            <div>
+                                <h4>Sarah J.</h4>
+                                <span>Graphic Designer</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"I doubled my client base in 3 months using the Client Acquisition System. Highly recommended!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://via.placeholder.com/60" alt="Marcus T.">
+                            <div>
+                                <h4>Marcus T.</h4>
+                                <span>Web Developer</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p>"The templates saved me so much time. Now I can focus on creative work instead of admin tasks."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://via.placeholder.com/60" alt="Lisa M.">
+                            <div>
+                                <h4>Lisa M.</h4>
+                                <span>Content Creator</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="store-cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Elevate Your Freelance Business?</h2>
+                    <p>Join thousands of freelancers who have transformed their businesses with our digital products.</p>
+                    <a href="#" class="btn btn-large">Browse All Products</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Freelancer's Colony</h3>
+                    <p>Empowering freelancers with premium digital products, resources, and education.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Shop</h3>
+                    <ul>
+                        <li><a href="#">All Products</a></li>
+                        <li><a href="#">eBooks & Guides</a></li>
+                        <li><a href="#">Templates</a></li>
+                        <li><a href="#">Video Courses</a></li>
+                        <li><a href="#">Tools & Kits</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="#">Licensing</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="../index.html#about">About Michael Edet</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#">Affiliate Program</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Freelancer's Colony. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+    <script>
+        // Store Page Specific JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // Cart functionality
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            const cartCount = document.querySelector('.cart-count');
+            let cartItems = 0;
+            
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    cartItems++;
+                    cartCount.textContent = cartItems;
+                    
+                    // Add animation
+                    this.innerHTML = '<i class="fas fa-check"></i> Added';
+                    this.classList.add('added');
+                    
+                    // Reset after 2 seconds
+                    setTimeout(() => {
+                        this.innerHTML = 'Add to Cart';
+                        this.classList.remove('added');
+                    }, 2000);
+                });
+            });
+            
+            // Quick view functionality
+            const quickViewButtons = document.querySelectorAll('.quick-view');
+            
+            quickViewButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const productCard = this.closest('.product-card');
+                    const productName = productCard.querySelector('h3').textContent;
+                    alert(`Quick view for: ${productName}\n\nThis would open a modal with more details in a full implementation.`);
+                });
+            });
+            
+            // Sort functionality
+            const sortSelect = document.getElementById('sort');
+            
+            sortSelect.addEventListener('change', function() {
+                alert(`Products would be sorted by: ${this.value}\n\nIn a full implementation, this would reorder the products.`);
+            });
+            
+            // Set current year in footer
+            document.getElementById('year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>

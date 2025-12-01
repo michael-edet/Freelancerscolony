@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Creation | Freelancer's Colony</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+   <link rel="stylesheet" href="/css/content-creation.css">
+</head>
+<body>
+    <!-- Fixed Header -->
+    <header class="fixed-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><span class="orange-text">Freelancer's</span> Colony</a>
+            </div>
+            
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="store.html">Store</a></li>
+                    <li><a href="education.html">Education Hub</a></li>
+                    <li><a href="content.html" class="active">Content Creation</a></li>
+                    <li><a href="news.html">News/Updates</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+                
+                <div class="menu-icon" id="menuIcon">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="store.html">Store</a></li>
+                <li><a href="education.html">Education Hub</a></li>
+                <li><a href="content.html" class="active">Content Creation</a></li>
+                <li><a href="news.html">News/Updates</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="content-page">
+        <!-- Hero Section -->
+        <section class="content-hero">
+            <div class="container">
+                <h1>Content <span class="orange-text">Creation</span></h1>
+                <p>Discover valuable insights, tutorials, and discussions through our blogs, videos, and podcasts designed for freelancers.</p>
+                <div class="search-box">
+                    <input type="text" placeholder="Search content...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Creation Section -->
+        <section class="content-section">
+            <div class="container">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="blog">Blog</button>
+                    <button class="tab-btn" data-tab="videos">Videos</button>
+                    <button class="tab-btn" data-tab="podcasts">Podcasts</button>
+                </div>
+                
+                <div class="tab-content active" id="blog">
+                    <div class="section-header">
+                        <h2>Latest <span class="orange-text">Blog Posts</span></h2>
+                        <div class="filter-options">
+                            <select>
+                                <option>All Categories</option>
+                                <option>Freelancing Tips</option>
+                                <option>Web Development</option>
+                                <option>Design</option>
+                                <option>Marketing</option>
+                                <option>Productivity</option>
+                            </select>
+                            <select>
+                                <option>Sort by Newest</option>
+                                <option>Sort by Popularity</option>
+                                <option>Sort by Comments</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-grid">
+                        <div class="blog-card">
+                            <img src="https://via.placeholder.com/350x200" alt="Blog Post 1">
+                            <div class="blog-info">
+                                <span class="blog-category orange-text">Freelancing Tips</span>
+                                <h3>10 Ways to Increase Your Freelance Income</h3>
+                                <p class="blog-excerpt">Discover proven strategies to boost your earnings as a freelancer in today's competitive market.</p>
+                                <div class="blog-meta">
+                                    <span><i class="far fa-calendar orange-text"></i> June 15, 2023</span>
+                                    <span><i class="far fa-clock orange-text"></i> 5 min read</span>
+                                    <span><i class="far fa-comment orange-text"></i> 24 comments</span>
+                                </div>
+                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="blog-card">
+                            <img src="https://via.placeholder.com/350x200" alt="Blog Post 2">
+                            <div class="blog-info">
+                                <span class="blog-category orange-text">Web Development</span>
+                                <h3>Essential Tools for Modern Web Developers</h3>
+                                <p class="blog-excerpt">A curated list of must-have tools that will streamline your web development workflow.</p>
+                                <div class="blog-meta">
+                                    <span><i class="far fa-calendar orange-text"></i> June 8, 2023</span>
+                                    <span><i class="far fa-clock orange-text"></i> 7 min read</span>
+                                    <span><i class="far fa-comment orange-text"></i> 18 comments</span>
+                                </div>
+                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="blog-card">
+                            <img src="https://via.placeholder.com/350x200" alt="Blog Post 3">
+                            <div class="blog-info">
+                                <span class="blog-category orange-text">Productivity</span>
+                                <h3>Time Management for Freelancers</h3>
+                                <p class="blog-excerpt">Learn how to effectively manage your time when working with multiple clients and projects.</p>
+                                <div class="blog-meta">
+                                    <span><i class="far fa-calendar orange-text"></i> June 1, 2023</span>
+                                    <span><i class="far fa-clock orange-text"></i> 6 min read</span>
+                                    <span><i class="far fa-comment orange-text"></i> 32 comments</span>
+                                </div>
+                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="blog-card">
+                            <img src="https://via.placeholder.com/350x200" alt="Blog Post 4">
+                            <div class="blog-info">
+                                <span class="blog-category orange-text">Design</span>
+                                <h3>UI/UX Trends to Watch in 2023</h3>
+                                <p class="blog-excerpt">Stay ahead of the curve with these emerging design trends that will dominate this year.</p>
+                                <div class="blog-meta">
+                                    <span><i class="far fa-calendar orange-text"></i> May 25, 2023</span>
+                                    <span><i class="far fa-clock orange-text"></i> 8 min read</span>
+                                    <span><i class="far fa-comment orange-text"></i> 15 comments</span>
+                                </div>
+                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="blog-card">
+                            <img src="https://via.placeholder.com/350x200" alt="Blog Post 5">
+                            <div class="blog-info">
+                                <span class="blog-category orange-text">Marketing</span>
+                                <h3>Building a Personal Brand as a Freelancer</h3>
+                                <p class="blog-excerpt">Establish your unique identity in the market and attract better clients with these strategies.</p>
+                                <div class="blog-meta">
+                                    <span><i class="far fa-calendar orange-text"></i> May 18, 2023</span>
+                                    <span><i class="far fa-clock orange-text"></i> 9 min read</span>
+                                    <span><i class="far fa-comment orange-text"></i> 27 comments</span>
+                                </div>
+                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="blog-card">
+                            <img src="https://via.placeholder.com/350x200" alt="Blog Post 6">
+                            <div class="blog-info">
+                                <span class="blog-category orange-text">Business</span>
+                                <h3>How to Handle Difficult Clients Professionally</h3>
+                                <p class="blog-excerpt">Practical advice for navigating challenging client relationships while maintaining professionalism.</p>
+                                <div class="blog-meta">
+                                    <span><i class="far fa-calendar orange-text"></i> May 10, 2023</span>
+                                    <span><i class="far fa-clock orange-text"></i> 7 min read</span>
+                                    <span><i class="far fa-comment orange-text"></i> 42 comments</span>
+                                </div>
+                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pagination">
+                        <a href="#" class="page-nav"><i class="fas fa-chevron-left"></i> Previous</a>
+                        <div class="page-numbers">
+                            <a href="#" class="active">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#">4</a>
+                            <a href="#">5</a>
+                        </div>
+                        <a href="#" class="page-nav">Next <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="videos">
+                    <div class="section-header">
+                        <h2>Featured <span class="orange-text">Videos</span></h2>
+                        <div class="filter-options">
+                            <select>
+                                <option>All Categories</option>
+                                <option>Tutorials</option>
+                                <option>Interviews</option>
+                                <option>Case Studies</option>
+                                <option>Q&A</option>
+                            </select>
+                            <select>
+                                <option>Sort by Newest</option>
+                                <option>Sort by Popularity</option>
+                                <option>Sort by Duration</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="videos-grid">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://via.placeholder.com/350x200" alt="Video 1">
+                                <div class="play-btn"><i class="fas fa-play"></i></div>
+                                <span class="duration">12:45</span>
+                            </div>
+                            <div class="video-info">
+                                <span class="video-category orange-text">Tutorial</span>
+                                <h3>Freelancer Pricing Strategies</h3>
+                                <p>Learn how to price your services competitively while ensuring you're paid what you're worth.</p>
+                                <div class="video-meta">
+                                    <span><i class="fas fa-eye orange-text"></i> 2.4K views</span>
+                                    <span><i class="far fa-calendar orange-text"></i> 2 weeks ago</span>
+                                </div>
+                                <a href="#" class="btn btn-small">Watch Now</a>
+                            </div>
+                        </div>
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://via.placeholder.com/350x200" alt="Video 2">
+                                <div class="play-btn"><i class="fas fa-play"></i></div>
+                                <span class="duration">15:30</span>
+                            </div>
+                            <div class="video-info">
+                                <span class="video-category orange-text">Interview</span>
+                                <h3>Building a Personal Brand</h3>
+                                <p>Interview with successful freelancers about establishing a strong personal brand.</p>
+                                <div class="video-meta">
+                                    <span><i class="fas fa-eye orange-text"></i> 3.1K views</span>
+                                    <span><i class="far fa-calendar orange-text"></i> 3 weeks ago</span>
+                                </div>
+                                <a href="#" class="btn btn-small">Watch Now</a>
+                            </div>
+                        </div>
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://via.placeholder.com/350x200" alt="Video 3">
+                                <div class="play-btn"><i class="fas fa-play"></i></div>
+                                <span class="duration">18:20</span>
+                            </div>
+                            <div class="video-info">
+                                <span class="video-category orange-text">Tutorial</span>
+                                <h3>Client Onboarding Process</h3>
+                                <p>Step-by-step guide to creating an effective client onboarding workflow.</p>
+                                <div class="video-meta">
+                                    <span><i class="fas fa-eye orange-text"></i> 1.8K views</span>
+                                    <span><i class="far fa-calendar orange-text"></i> 1 month ago</span>
+                                </div>
+                                <a href="#" class="btn btn-small">Watch Now</a>
+                            </div>
+                        </div>
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://via.placeholder.com/350x200" alt="Video 4">
+                                <div class="play-btn"><i class="fas fa-play"></i></div>
+                                <span class="duration">22:10</span>
+                            </div>
+                            <div class="video-info">
+                                <span class="video-category orange-text">Case Study</span>
+                                <h3>From Side Hustle to Full-Time</h3>
+                                <p>Real story of transitioning from a 9-5 job to full-time freelancing.</p>
+                                <div class="video-meta">
+                                    <span><i class="fas fa-eye orange-text"></i> 4.2K views</span>
+                                    <span><i class="far fa-calendar orange-text"></i> 1 month ago</span>
+                                </div>
+                                <a href="#" class="btn btn-small">Watch Now</a>
+                            </div>
+                        </div>
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://via.placeholder.com/350x200" alt="Video 5">
+                                <div class="play-btn"><i class="fas fa-play"></i></div>
+                                <span class="duration">14:35</span>
+                            </div>
+                            <div class="video-info">
+                                <span class="video-category orange-text">Q&A</span>
+                                <h3>Freelancer Tax Questions Answered</h3>
+                                <p>CPA answers common tax questions from freelancers.</p>
+                                <div class="video-meta">
+                                    <span><i class="fas fa-eye orange-text"></i> 2.7K views</span>
+                                    <span><i class="far fa-calendar orange-text"></i> 2 months ago</span>
+                                </div>
+                                <a href="#" class="btn btn-small">Watch Now</a>
+                            </div>
+                        </div>
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://via.placeholder.com/350x200" alt="Video 6">
+                                <div class="play-btn"><i class="fas fa-play"></i></div>
+                                <span class="duration">16:50</span>
+                            </div>
+                            <div class="video-info">
+                                <span class="video-category orange-text">Tutorial</span>
+                                <h3>Creating a Winning Portfolio</h3>
+                                <p>Tips and examples for creating a portfolio that gets you hired.</p>
+                                <div class="video-meta">
+                                    <span><i class="fas fa-eye orange-text"></i> 3.5K views</span>
+                                    <span><i class="far fa-calendar orange-text"></i> 2 months ago</span>
+                                </div>
+                                <a href="#" class="btn btn-small">Watch Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pagination">
+                        <a href="#" class="page-nav"><i class="fas fa-chevron-left"></i> Previous</a>
+                        <div class="page-numbers">
+                            <a href="#" class="active">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#">4</a>
+                        </div>
+                        <a href="#" class="page-nav">Next <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="podcasts">
+                    <div class="section-header">
+                        <h2>Latest <span class="orange-text">Podcasts</span></h2>
+                        <div class="filter-options">
+                            <select>
+                                <option>All Categories</option>
+                                <option>Business</option>
+                                <option>Interviews</option>
+                                <option>Stories</option>
+                                <option>Q&A</option>
+                            </select>
+                            <select>
+                                <option>Sort by Newest</option>
+                                <option>Sort by Popularity</option>
+                                <option>Sort by Duration</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="podcasts-grid">
+                        <div class="podcast-card">
+                            <div class="podcast-image">
+                                <img src="https://via.placeholder.com/150" alt="Podcast 1">
+                            </div>
+                            <div class="podcast-info">
+                                <span class="podcast-category orange-text">Business</span>
+                                <h3>Episode 23: Scaling Your Freelance Business</h3>
+                                <p class="podcast-excerpt">In this episode, we discuss strategies to scale your freelance business beyond the solo practitioner model.</p>
+                                <div class="podcast-meta">
+                                    <span><i class="fas fa-headphones orange-text"></i> 45 min</span>
+                                    <span><i class="far fa-calendar orange-text"></i> May 28, 2023</span>
+                                    <span><i class="fas fa-download orange-text"></i> 1.2K downloads</span>
+                                </div>
+                                <div class="podcast-actions">
+                                    <a href="#" class="btn btn-small"><i class="fas fa-play"></i> Play</a>
+                                    <a href="#" class="btn btn-small btn-outline"><i class="fas fa-download"></i> Download</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="podcast-card">
+                            <div class="podcast-image">
+                                <img src="https://via.placeholder.com/150" alt="Podcast 2">
+                            </div>
+                            <div class="podcast-info">
+                                <span class="podcast-category orange-text">Work-Life Balance</span>
+                                <h3>Episode 22: Work-Life Balance for Freelancers</h3>
+                                <p class="podcast-excerpt">Finding the right balance between work and personal life when you're your own boss.</p>
+                                <div class="podcast-meta">
+                                    <span><i class="fas fa-headphones orange-text"></i> 38 min</span>
+                                    <span><i class="far fa-calendar orange-text"></i> May 14, 2023</span>
+                                    <span><i class="fas fa-download orange-text"></i> 980 downloads</span>
+                                </div>
+                                <div class="podcast-actions">
+                                    <a href="#" class="btn btn-small"><i class="fas fa-play"></i> Play</a>
+                                    <a href="#" class="btn btn-small btn-outline"><i class="fas fa-download"></i> Download</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="podcast-card">
+                            <div class="podcast-image">
+                                <img src="https://via.placeholder.com/150" alt="Podcast 3">
+                            </div>
+                            <div class="podcast-info">
+                                <span class="podcast-category orange-text">Business</span>
+                                <h3>Episode 21: Dealing With Difficult Clients</h3>
+                                <p class="podcast-excerpt">Practical advice on how to handle challenging client situations professionally.</p>
+                                <div class="podcast-meta">
+                                    <span><i class="fas fa-headphones orange-text"></i> 42 min</span>
+                                    <span><i class="far fa-calendar orange-text"></i> April 30, 2023</span>
+                                    <span><i class="fas fa-download orange-text"></i> 1.1K downloads</span>
+                                </div>
+                                <div class="podcast-actions">
+                                    <a href="#" class="btn btn-small"><i class="fas fa-play"></i> Play</a>
+                                    <a href="#" class="btn btn-small btn-outline"><i class="fas fa-download"></i> Download</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="podcast-card">
+                            <div class="podcast-image">
+                                <img src="https://via.placeholder.com/150" alt="Podcast 4">
+                            </div>
+                            <div class="podcast-info">
+                                <span class="podcast-category orange-text">Interview</span>
+                                <h3>Episode 20: Freelancing in the Gig Economy</h3>
+                                <p class="podcast-excerpt">Interview with a top freelancer who shares insights about thriving in today's gig economy.</p>
+                                <div class="podcast-meta">
+                                    <span><i class="fas fa-headphones orange-text"></i> 50 min</span>
+                                    <span><i class="far fa-calendar orange-text"></i> April 16, 2023</span>
+                                    <span><i class="fas fa-download orange-text"></i> 1.5K downloads</span>
+                                </div>
+                                <div class="podcast-actions">
+                                    <a href="#" class="btn btn-small"><i class="fas fa-play"></i> Play</a>
+                                    <a href="#" class="btn btn-small btn-outline"><i class="fas fa-download"></i> Download</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="podcast-card">
+                            <div class="podcast-image">
+                                <img src="https://via.placeholder.com/150" alt="Podcast 5">
+                            </div>
+                            <div class="podcast-info">
+                                <span class="podcast-category orange-text">Stories</span>
+                                <h3>Episode 19: From Failure to Freelance Success</h3>
+                                <p class="podcast-excerpt">Inspiring story of overcoming early failures to build a thriving freelance career.</p>
+                                <div class="podcast-meta">
+                                    <span><i class="fas fa-headphones orange-text"></i> 47 min</span>
+                                    <span><i class="far fa-calendar orange-text"></i> April 2, 2023</span>
+                                    <span><i class="fas fa-download orange-text"></i> 1.3K downloads</span>
+                                </div>
+                                <div class="podcast-actions">
+                                    <a href="#" class="btn btn-small"><i class="fas fa-play"></i> Play</a>
+                                    <a href="#" class="btn btn-small btn-outline"><i class="fas fa-download"></i> Download</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="podcast-card">
+                            <div class="podcast-image">
+                                <img src="https://via.placeholder.com/150" alt="Podcast 6">
+                            </div>
+                            <div class="podcast-info">
+                                <span class="podcast-category orange-text">Q&A</span>
+                                <h3>Episode 18: Freelancer Legal Questions Answered</h3>
+                                <p class="podcast-excerpt">Lawyer answers common legal questions from freelancers about contracts and rights.</p>
+                                <div class="podcast-meta">
+                                    <span><i class="fas fa-headphones orange-text"></i> 52 min</span>
+                                    <span><i class="far fa-calendar orange-text"></i> March 19, 2023</span>
+                                    <span><i class="fas fa-download orange-text"></i> 1.6K downloads</span>
+                                </div>
+                                <div class="podcast-actions">
+                                    <a href="#" class="btn btn-small"><i class="fas fa-play"></i> Play</a>
+                                    <a href="#" class="btn btn-small btn-outline"><i class="fas fa-download"></i> Download</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pagination">
+                        <a href="#" class="page-nav"><i class="fas fa-chevron-left"></i> Previous</a>
+                        <div class="page-numbers">
+                            <a href="#" class="active">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                        </div>
+                        <a href="#" class="page-nav">Next <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits">
+            <div class="container">
+                <h2 class="section-title">Why Follow Our <span class="orange-text">Content</span></h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-lightbulb orange-text"></i>
+                        </div>
+                        <h3>Valuable Insights</h3>
+                        <p>Get actionable advice and insights from experienced freelancers and industry experts.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line orange-text"></i>
+                        </div>
+                        <h3>Stay Updated</h3>
+                        <p>Keep up with the latest trends, tools, and strategies in the freelancing world.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-users orange-text"></i>
+                        </div>
+                        <h3>Community Stories</h3>
+                        <p>Learn from real stories and experiences shared by fellow freelancers.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-headset orange-text"></i>
+                        </div>
+                        <h3>Multiple Formats</h3>
+                        <p>Consume content in your preferred format - read, watch, or listen on the go.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h2>Never Miss New Content</h2>
+                    <p>Subscribe to our newsletter to get notified about new blog posts, videos, and podcast episodes.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Freelancer's Colony</h3>
+                    <p>A comprehensive platform for freelancers offering resources, education, and community support.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="education.html">Education Hub</a></li>
+                        <li><a href="content.html">Content Creation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope orange-text"></i> hello@freelancerscolony.com</li>
+                        <li><i class="fas fa-phone orange-text"></i> +1 (234) 567-8901</li>
+                        <li><i class="fas fa-map-marker-alt orange-text"></i> Lagos, Nigeria</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Freelancer's Colony. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+<script src="/js/content-creation.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>

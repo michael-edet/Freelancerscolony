@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelancing Masterclass | Education Hub | Freelancer's Colony</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        /* Simplified Course Styles */
+        .course-hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1200x600') center/cover;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        
+        .course-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .course-badge {
+            background: #FF6B00;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .course-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .course-meta {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .course-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .course-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+        
+        .course-content {
+            padding: 40px;
+        }
+        
+        .course-content h2 {
+            color: #000;
+            margin: 30px 0 20px;
+            font-size: 1.5rem;
+        }
+        
+        .course-content p {
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .course-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .feature-card {
+            padding: 20px;
+            border-left: 3px solid #FF6B00;
+            background: #f9f9f9;
+        }
+        
+        .enrollment-box {
+            background: #000;
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 50px 0;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #FF6B00;
+            margin: 20px 0;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            opacity: 0.7;
+            margin-left: 10px;
+        }
+        
+        .instructor-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin: 50px 0;
+            padding: 30px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+        
+        .instructor-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .newsletter-section {
+            background: #000;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 768px) {
+            .course-title {
+                font-size: 2rem;
+            }
+            
+            .course-meta {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .course-content {
+                padding: 25px;
+            }
+            
+            .instructor-card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed Header -->
+    <header class="fixed-header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html"><span class="orange-text">Freelancer's</span> Colony</a>
+            </div>
+            
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../education.html">Education Hub</a></li>
+                    <li><a href="../content.html">Content</a></li>
+                    <li><a href="../about.html">About</a></li>
+                </ul>
+                
+                <div class="menu-icon" id="menuIcon">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../education.html">Education Hub</a></li>
+                <li><a href="../content.html">Content</a></li>
+                <li><a href="../about.html">About</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Course Hero -->
+    <section class="course-hero">
+        <div class="container">
+            <span class="course-badge">Premium Course</span>
+            <h1 class="course-title">Freelancing Masterclass</h1>
+            <p>Build a successful freelancing career from scratch with our comprehensive training program</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <div class="course-container">
+            <div class="course-card">
+                <div class="course-content">
+                    <div class="course-meta">
+                        <span><i class="fas fa-star orange-text"></i> 4.9 (120 reviews)</span>
+                        <span><i class="fas fa-users orange-text"></i> 850+ students</span>
+                        <span><i class="fas fa-clock orange-text"></i> 12 hours</span>
+                    </div>
+                    
+                    <h2>Course Overview</h2>
+                    <p>This comprehensive masterclass will take you from freelancing beginner to confident professional. Whether you're just starting or looking to scale your existing freelance business, this course provides the roadmap to success.</p>
+                    
+                    <div class="course-features">
+                        <div class="feature-card">
+                            <h3><i class="fas fa-check-circle orange-text"></i> What You'll Learn</h3>
+                            <ul>
+                                <li>Finding your profitable niche</li>
+                                <li>Setting competitive rates</li>
+                                <li>Landing high-paying clients</li>
+                                <li>Managing projects efficiently</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <h3><i class="fas fa-list-check orange-text"></i> Course Includes</h3>
+                            <ul>
+                                <li>35 video lessons</li>
+                                <li>Downloadable resources</li>
+                                <li>Community access</li>
+                                <li>Certificate of completion</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h2>Course Curriculum</h2>
+                    
+                    <h3>Module 1: Foundations of Freelancing</h3>
+                    <ul>
+                        <li>Identifying your skills and niche</li>
+                        <li>Setting up your freelance business</li>
+                        <li>Essential tools and software</li>
+                    </ul>
+                    
+                    <h3>Module 2: Client Acquisition</h3>
+                    <ul>
+                        <li>Creating an irresistible portfolio</li>
+                        <li>Effective pitching strategies</li>
+                        <li>Leveraging social media</li>
+                    </ul>
+                    
+                    <h3>Module 3: Business Operations</h3>
+                    <ul>
+                        <li>Contracts and legal considerations</li>
+                        <li>Time management for freelancers</li>
+                        <li>Financial management basics</li>
+                    </ul>
+                    
+                    <h3>Module 4: Scaling Your Business</h3>
+                    <ul>
+                        <li>Raising your rates with confidence</li>
+                        <li>Creating passive income streams</li>
+                        <li>Building a personal brand</li>
+                    </ul>
+                    
+                    <div class="enrollment-box">
+                        <h2>Enroll Today</h2>
+                        <p>Start building your successful freelance career</p>
+                        <div class="price">$99.99 <span class="original-price">$199.99</span></div>
+                        <a href="#" class="btn">Enroll Now</a>
+                        <p class="small-text">30-day money-back guarantee</p>
+                    </div>
+                    
+                    <div class="instructor-card">
+                        <img src="https://via.placeholder.com/150" alt="Michael Edet" class="instructor-img">
+                        <div>
+                            <h3>About the Instructor</h3>
+                            <p><strong>Michael Edet</strong> is a professional freelancer and instructor with over 8 years of experience. He's helped thousands of students build successful freelance careers through his courses and coaching programs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Newsletter Section -->
+        <section class="newsletter-section">
+            <div class="newsletter-content">
+                <h2>Want More Freelancing Resources?</h2>
+                <p>Subscribe to our newsletter for exclusive tips, course discounts, and free resources.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Freelancer's Colony</h3>
+                    <p>Your comprehensive platform for freelancing success.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../education.html">Courses</a></li>
+                        <li><a href="../resources.html">Resources</a></li>
+                        <li><a href="../about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Freelancer's Colony. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('menuIcon').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        });
+        
+        // Newsletter Form Submission
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for subscribing to our newsletter!');
+            this.reset();
+        });
+        
+        // Enrollment Button
+        document.querySelector('.enrollment-box .btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Redirecting to enrollment page...');
+        });
+        
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

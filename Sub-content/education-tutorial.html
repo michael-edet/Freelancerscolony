@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Your First Client | Tutorials | Freelancer's Colony</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        /* Simplified Tutorial Styles */
+        .tutorial-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .tutorial-header {
+            text-align: center;
+            margin: 80px 0 40px;
+        }
+        
+        .tutorial-category {
+            display: inline-block;
+            background: #FF6B00;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .tutorial-title {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        
+        .tutorial-meta {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            color: #666;
+        }
+        
+        .tutorial-video {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #000;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        
+        .play-button i {
+            color: white;
+            font-size: 2rem;
+            margin-left: 5px;
+        }
+        
+        .tutorial-content {
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+        
+        .tutorial-content h2 {
+            font-size: 1.5rem;
+            margin: 40px 0 20px;
+            color: #000;
+        }
+        
+        .tutorial-content p {
+            margin-bottom: 20px;
+        }
+        
+        .tutorial-content ul {
+            margin-bottom: 30px;
+            padding-left: 20px;
+        }
+        
+        .tutorial-content li {
+            margin-bottom: 10px;
+        }
+        
+        .download-resources {
+            background: #f5f5f5;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 40px 0;
+        }
+        
+        .tutorial-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 50px 0;
+        }
+        
+        .instructor-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin: 60px 0;
+            padding: 30px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+        
+        .instructor-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .newsletter-section {
+            background: #000;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 30px auto 0;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            font-size: 1rem;
+        }
+        
+        .newsletter-button {
+            background: #FF6B00;
+            color: white;
+            border: none;
+            padding: 0 25px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .tutorial-title {
+                font-size: 1.8rem;
+            }
+            
+            .tutorial-meta {
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+            }
+            
+            .tutorial-actions {
+                flex-direction: column;
+            }
+            
+            .instructor-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-button {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed Header -->
+    <header class="fixed-header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html"><span class="orange-text">Freelancer's</span> Colony</a>
+            </div>
+            
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../education.html">Education Hub</a></li>
+                    <li><a href="../tutorials.html">Tutorials</a></li>
+                    <li><a href="../about.html">About</a></li>
+                </ul>
+                
+                <div class="menu-icon" id="menuIcon">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../education.html">Education Hub</a></li>
+                <li><a href="../tutorials.html">Tutorials</a></li>
+                <li><a href="../about.html">About</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="tutorial-container">
+            <!-- Tutorial Header -->
+            <header class="tutorial-header">
+                <span class="tutorial-category">Client Acquisition</span>
+                <h1 class="tutorial-title">Getting Your First Freelance Client</h1>
+                <div class="tutorial-meta">
+                    <span><i class="fas fa-eye orange-text"></i> 1.2K views</span>
+                    <span><i class="far fa-calendar orange-text"></i> June 10, 2023</span>
+                    <span><i class="fas fa-clock orange-text"></i> 15 min</span>
+                </div>
+            </header>
+
+            <!-- Tutorial Video -->
+            <div class="tutorial-video">
+                <div class="play-button">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+
+            <!-- Tutorial Content -->
+            <article class="tutorial-content">
+                <h2>Step-by-Step Guide to Landing Your First Client</h2>
+                <p>Getting your first freelance client can feel daunting, but with the right approach, you can start building your client base quickly. Here's our proven method:</p>
+                
+                <h3>1. Define Your Service Offering</h3>
+                <p>Clearly articulate what services you're offering and to whom. Be specific about:</p>
+                <ul>
+                    <li>Your core skills and services</li>
+                    <li>Your ideal client profile</li>
+                    <li>The specific problems you solve</li>
+                </ul>
+                
+                <h3>2. Create a Simple Portfolio</h3>
+                <p>Even without client work, you can showcase your skills:</p>
+                <ul>
+                    <li>Create sample projects</li>
+                    <li>Document personal projects</li>
+                    <li>Offer free work to a non-profit</li>
+                </ul>
+                
+                <h3>3. Leverage Your Network</h3>
+                <p>Your first clients will likely come from people who already know you:</p>
+                <ul>
+                    <li>Announce your services on social media</li>
+                    <li>Reach out to former colleagues</li>
+                    <li>Ask friends and family for referrals</li>
+                </ul>
+                
+                <h3>4. Start With Small Projects</h3>
+                <p>Begin with smaller, lower-risk projects to build your reputation:</p>
+                <ul>
+                    <li>Offer fixed-price projects</li>
+                    <li>Complete quick turnaround tasks</li>
+                    <li>Focus on delivering exceptional value</li>
+                </ul>
+                
+                <h3>5. Ask for Testimonials</h3>
+                <p>After completing work, request feedback you can use:</p>
+                <ul>
+                    <li>Written testimonials</li>
+                    <li>Video testimonials</li>
+                    <li>Case studies of your work</li>
+                </ul>
+                
+                <div class="download-resources">
+                    <h3>Downloadable Resources</h3>
+                    <p>Enhance your learning with these free resources:</p>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-file-pdf orange-text"></i> Client Proposal Template</a></li>
+                        <li><a href="#"><i class="fas fa-file-word orange-text"></i> Portfolio Checklist</a></li>
+                        <li><a href="#"><i class="fas fa-file-excel orange-text"></i> Rate Calculator</a></li>
+                    </ul>
+                </div>
+                
+                <div class="tutorial-actions">
+                    <a href="#" class="btn btn-outline"><i class="fas fa-thumbs-up"></i> Like This Tutorial</a>
+                    <a href="../tutorials.html" class="btn"><i class="fas fa-arrow-left"></i> All Tutorials</a>
+                </div>
+                
+                <div class="instructor-card">
+                    <img src="https://via.placeholder.com/150" alt="Michael Edet" class="instructor-img">
+                    <div>
+                        <h3>About the Instructor</h3>
+                        <p><strong>Michael Edet</strong> is a professional freelancer who has helped thousands of students land their first clients. He specializes in helping beginners start their freelance careers.</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+        <!-- Newsletter Section -->
+        <section class="newsletter-section">
+            <div class="newsletter-content">
+                <h2 class="newsletter-title">Get More Freelancing Tutorials</h2>
+                <p>Subscribe to receive weekly tutorials and resources straight to your inbox.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" class="newsletter-input" required>
+                    <button type="submit" class="newsletter-button">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Freelancer's Colony</h3>
+                    <p>Empowering freelancers through education and community.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../education.html">Courses</a></li>
+                        <li><a href="../tutorials.html">Tutorials</a></li>
+                        <li><a href="../resources.html">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Freelancer's Colony. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('menuIcon').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        });
+        
+        // Video Play Button
+        document.querySelector('.play-button').addEventListener('click', function() {
+            alert('Video player would launch here with the tutorial video');
+        });
+        
+        // Newsletter Form Submission
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for subscribing to our newsletter!');
+            this.reset();
+        });
+        
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

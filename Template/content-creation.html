@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Creation | Freelancer's Colony</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #FF6B00;
+            --white-color: #FFFFFF;
+            --light-gray: #F5F5F5;
+            --dark-gray: #333333;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--primary-color);
+            background-color: var(--white-color);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        .content-hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            color: var(--white-color);
+            text-align: center;
+        }
+
+        .content-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .content-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        /* Content Types Section */
+        .content-types {
+            padding: 80px 0;
+            background-color: var(--white-color);
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .content-card {
+            background-color: var(--white-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .content-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-card-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .content-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .content-card:hover .content-card-img img {
+            transform: scale(1.1);
+        }
+
+        .content-card-body {
+            padding: 25px;
+        }
+
+        .content-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .content-card p {
+            margin-bottom: 20px;
+            color: var(--dark-gray);
+        }
+
+        .content-card .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+            border-radius: 5px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .content-card .btn:hover {
+            background-color: var(--primary-color);
+        }
+
+        /* Resources Section */
+        .content-resources {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+
+        .resources-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #ddd;
+            flex-wrap: wrap;
+        }
+
+        .resource-tab {
+            padding: 12px 25px;
+            background: none;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            margin: 0 5px;
+        }
+
+        .resource-tab::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        .resource-tab.active::after, .resource-tab:hover::after {
+            width: 100%;
+        }
+
+        .resource-tab.active, .resource-tab:hover {
+            color: var(--secondary-color);
+        }
+
+        .resource-content {
+            display: none;
+        }
+
+        .resource-content.active {
+            display: block;
+        }
+
+        .resource-item {
+            background-color: var(--white-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .resource-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 107, 0, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .resource-icon i {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+        }
+
+        .resource-info h4 {
+            margin-bottom: 10px;
+        }
+
+        .resource-info p {
+            color: var(--dark-gray);
+            margin-bottom: 10px;
+        }
+
+        .resource-link {
+            color: var(--secondary-color);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .resource-link i {
+            transition: var(--transition);
+        }
+
+        .resource-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Tools Section */
+        .content-tools {
+            padding: 80px 0;
+            background-color: var(--white-color);
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .tool-card {
+            background-color: var(--white-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            text-align: center;
+            border: 1px solid #eee;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--secondary-color);
+        }
+
+        .tool-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(255, 107, 0, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .tool-icon i {
+            color: var(--secondary-color);
+            font-size: 2rem;
+        }
+
+        .tool-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .tool-card p {
+            margin-bottom: 20px;
+            color: var(--dark-gray);
+        }
+
+        /* Tutorials Section */
+        .content-tutorials {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+
+        .tutorial-video {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin: 40px auto;
+            max-width: 800px;
+        }
+
+        .tutorial-video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* CTA Section */
+        .content-cta {
+            padding: 80px 0;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            text-align: center;
+        }
+
+        .content-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .content-cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+
+        .btn-large {
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .btn-large:hover {
+            background-color: var(--white-color);
+            color: var(--primary-color);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .content-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .content-hero {
+                padding: 100px 0 60px;
+            }
+
+            .content-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .resource-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .resource-icon {
+                margin-bottom: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .content-hero h1 {
+                font-size: 2rem;
+            }
+
+            .resources-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .resource-tab {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="content-hero">
+        <div class="container">
+            <h1>Content Creation Mastery</h1>
+            <p>Learn to create compelling content that engages your audience and grows your freelance business</p>
+            <a href="#content-types" class="btn-large">Explore Content Types</a>
+        </div>
+    </section>
+
+    <!-- Content Types Section -->
+    <section class="content-types" id="content-types">
+        <div class="container">
+            <h2 class="section-title">Content <span class="orange-text">Types</span></h2>
+            <p class="section-subtitle">Discover different content formats and how to master each one</p>
+            
+            <div class="content-grid">
+                <!-- Blogging -->
+                <div class="content-card">
+                    <div class="content-card-img">
+                        <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Blogging">
+                    </div>
+                    <div class="content-card-body">
+                        <h3>Blogging & Writing</h3>
+                        <p>Master the art of written content creation for blogs, articles, and websites. Learn SEO techniques, content structuring, and engaging writing styles.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Video -->
+                <div class="content-card">
+                    <div class="content-card-img">
+                        <img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Video Content">
+                    </div>
+                    <div class="content-card-body">
+                        <h3>Video Content</h3>
+                        <p>Create professional videos for YouTube, social media, and client projects. Learn scripting, filming, editing, and optimization techniques.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Social Media -->
+                <div class="content-card">
+                    <div class="content-card-img">
+                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Social Media">
+                    </div>
+                    <div class="content-card-body">
+                        <h3>Social Media Content</h3>
+                        <p>Develop strategies for creating engaging posts across platforms. Learn platform-specific best practices and content calendars.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Graphic Design -->
+                <div class="content-card">
+                    <div class="content-card-img">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Graphic Design">
+                    </div>
+                    <div class="content-card-body">
+                        <h3>Visual & Graphic Content</h3>
+                        <p>Create stunning visuals, infographics, and designs that communicate effectively. Master tools like Photoshop, Illustrator, and Canva.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Podcasting -->
+                <div class="content-card">
+                    <div class="content-card-img">
+                        <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Podcasting">
+                    </div>
+                    <div class="content-card-body">
+                        <h3>Audio & Podcasting</h3>
+                        <p>Start and grow your podcast. Learn recording, editing, distribution, and monetization strategies for audio content.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- AI Content -->
+                <div class="content-card">
+                    <div class="content-card-img">
+                        <img src="https://images.unsplash.com/photo-1677442135136-760c813cd6d6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="AI Content">
+                    </div>
+                    <div class="content-card-body">
+                        <h3>AI-Assisted Content</h3>
+                        <p>Leverage artificial intelligence tools to enhance your content creation workflow and generate ideas at scale.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="content-resources">
+        <div class="container">
+            <h2 class="section-title">Content Creation <span class="orange-text">Resources</span></h2>
+            <p class="section-subtitle">Essential tools, templates, and guides for content creators</p>
+            
+            <div class="resources-tabs">
+                <button class="resource-tab active" data-tab="guides">Guides</button>
+                <button class="resource-tab" data-tab="templates">Templates</button>
+                <button class="resource-tab" data-tab="tools">Tools</button>
+                <button class="resource-tab" data-tab="inspiration">Inspiration</button>
+            </div>
+            
+            <div class="resource-content active" id="guides">
+                <div class="resource-item">
+                    <div class="resource-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="resource-info">
+                        <h4>Content Strategy Guide</h4>
+                        <p>Comprehensive guide to developing a content strategy that drives results</p>
+                        <a href="#" class="resource-link">Download Guide <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="resource-item">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="resource-info">
+                        <h4>SEO Writing Handbook</h4>
+                        <p>Learn how to optimize your content for search engines while keeping it engaging</p>
+                        <a href="#" class="resource-link">Download Handbook <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="resource-item">
+                    <div class="resource-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="resource-info">
+                        <h4>Video Scripting Blueprint</h4>
+                        <p>Step-by-step guide to writing effective video scripts that convert</p>
+                        <a href="#" class="resource-link">Download Blueprint <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="resource-content" id="templates">
+                <div class="resource-item">
+                    <div class="resource-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="resource-info">
+                        <h4>Content Calendar Template</h4>
+                        <p>Plan and organize your content with this customizable calendar template</p>
+                        <a href="#" class="resource-link">Download Template <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="resource-item">
+                    <div class="resource-icon">
+                        <i class="fas fa-blog"></i>
+                    </div>
+                    <div class="resource-info">
+                        <h4>Blog Post Template Pack</h4>
+                        <p>10 professionally designed blog post templates for different content types</p>
+                        <a href="#" class="resource-link">Download Pack <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="resource-item">
+                    <div class="resource-icon">
+                        <i class="fas fa-hashtag"></i>
+                    </div>
+                    <div class="resource-info">
+                        <h4>Social Media Post Templates</h4>
+                        <p>Collection of templates for all major social media platforms</p>
+                        <a href="#" class="resource-link">Download Templates <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="resource-content" id="tools">
+                <div class="resource-item">
+                    <div class="resource-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="resource-info">
+                        <h4>Content Audit Tool</h4>
+                        <p>Spreadsheet template to analyze and improve your existing content</p>
+                        <a href="#" class="resource-link">Download Tool <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="resource-item">
+                    <div class="resource-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <div class="resource-info">
+                        <h4>Keyword Research Worksheet</h4>
+                        <p>Systematic approach to finding and prioritizing content keywords</p>
+                        <a href="#" class="resource-link">Download Worksheet <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="resource-item">
+                    <div class="resource-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="resource-info">
+                        <h4>Content Performance Tracker</h4>
+                        <p>Monitor and analyze how your content is performing over time</p>
+                        <a href="#" class="resource-link">Download Tracker <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="resource-content" id="inspiration">
+                <div class="resource-item">
+                    <div class="resource-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="resource-info">
+                        <h4>Content Idea Generator</h4>
+                        <p>500+ content ideas across different industries and formats</p>
+                        <a href="#" class="resource-link">Download Generator <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="resource-item">
+                    <div class="resource-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="resource-info">
+                        <h4>Content Examples Gallery</h4>
+                        <p>Curated collection of outstanding content examples for inspiration</p>
+                        <a href="#" class="resource-link">View Gallery <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="resource-item">
+                    <div class="resource-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="resource-info">
+                        <h4>Visual Inspiration Board</h4>
+                        <p>Color schemes, fonts, and design elements for visual content</p>
+                        <a href="#" class="resource-link">View Board <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="content-tools">
+        <div class="container">
+            <h2 class="section-title">Essential Content <span class="orange-text">Tools</span></h2>
+            <p class="section-subtitle">Recommended software and apps to streamline your content creation</p>
+            
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <h3>Writing & Editing</h3>
+                    <p>Grammarly, Hemingway Editor, Google Docs, Notion</p>
+                    <a href="#" class="btn">Explore Tools</a>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Video Production</h3>
+                    <p>Premiere Pro, DaVinci Resolve, Canva, Descript</p>
+                    <a href="#" class="btn">Explore Tools</a>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <h3>Graphic Design</h3>
+                    <p>Photoshop, Illustrator, Canva, Figma</p>
+                    <a href="#" class="btn">Explore Tools</a>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-podcast"></i>
+                    </div>
+                    <h3>Audio & Podcasting</h3>
+                    <p>Audacity, GarageBand, Riverside, Anchor</p>
+                    <a href="#" class="btn">Explore Tools</a>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Content Assistants</h3>
+                    <p>ChatGPT, Jasper, Copy.ai, Midjourney</p>
+                    <a href="#" class="btn">Explore Tools</a>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Analytics & SEO</h3>
+                    <p>Google Analytics, SEMrush, Ahrefs, Hotjar</p>
+                    <a href="#" class="btn">Explore Tools</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tutorials Section -->
+    <section class="content-tutorials">
+        <div class="container">
+            <h2 class="section-title">Content Creation <span class="orange-text">Tutorials</span></h2>
+            <p class="section-subtitle">Watch and learn from our comprehensive video tutorials</p>
+            
+            <div class="tutorial-video">
+                <iframe src="https://www.youtube.com/embed/EJ7O6W5Qo4M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+            <div class="text-center">
+                <a href="#" class="btn-large">View All Tutorials</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="content-cta">
+        <div class="container">
+            <h2>Ready to Elevate Your Content Creation?</h2>
+            <p>Join our Content Creator Pro course and master all aspects of professional content creation</p>
+            <a href="#" class="btn-large">Enroll Now</a>
+        </div>
+    </section>
+
+    <script>
+        // Tab functionality for resources section
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.resource-tab');
+            const tabContents = document.querySelectorAll('.resource-content');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active class from all tabs and contents
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    
+                    // Show corresponding content
+                    const tabId = this.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Simulate resource download
+            const resourceLinks = document.querySelectorAll('.resource-link');
+            resourceLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if(this.href === '#') {
+                        e.preventDefault();
+                        const resourceName = this.closest('.resource-info').querySelector('h4').textContent;
+                        alert(`Downloading: ${resourceName}\n\nIn a full implementation, this would download the resource.`);
+                    }
+                });
+            });
+            
+            // Tool card interaction
+            const toolCards = document.querySelectorAll('.tool-card');
+            toolCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.querySelector('.tool-icon i').style.transform = 'rotate(15deg)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.querySelector('.tool-icon i').style.transform = 'rotate(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

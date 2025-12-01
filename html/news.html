@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Updates | Freelancer's Colony</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <!-- Fixed Header -->
+    <header class="fixed-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><span class="orange-text">Freelancer's</span> Colony</a>
+            </div>
+            
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="store.html">Store</a></li>
+                    <li><a href="education.html">Education Hub</a></li>
+                    <li><a href="content.html">Content Creation</a></li>
+                    <li><a href="news.html" class="active">News/Updates</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+                
+                <div class="menu-icon" id="menuIcon">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="store.html">Store</a></li>
+                <li><a href="education.html">Education Hub</a></li>
+                <li><a href="content.html">Content Creation</a></li>
+                <li><a href="news.html" class="active">News/Updates</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="news-page">
+        <!-- News Hero Section -->
+        <section class="news-hero">
+            <div class="container">
+                <h1>Latest <span class="orange-text">News & Updates</span></h1>
+                <p>Stay informed with the latest announcements, platform updates, and industry news from Freelancer's Colony.</p>
+            </div>
+        </section>
+
+        <!-- News Categories -->
+        <section class="news-categories">
+            <div class="container">
+                <div class="category-tabs">
+                    <button class="category-tab active" data-category="all">All News</button>
+                    <button class="category-tab" data-category="updates">Platform Updates</button>
+                    <button class="category-tab" data-category="announcements">Announcements</button>
+                    <button class="category-tab" data-category="events">Events</button>
+                    <button class="category-tab" data-category="partnerships">Partnerships</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured News -->
+        <section class="featured-news">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Featured <span class="orange-text">News</span></h2>
+                </div>
+                
+                <div class="featured-news-card">
+                    <div class="featured-image">
+                        <img src="https://via.placeholder.com/800x400" alt="Featured News">
+                    </div>
+                    <div class="featured-content">
+                        <span class="news-date orange-text">June 20, 2023</span>
+                        <h3>Freelancer's Colony 2.0 Platform Launch</h3>
+                        <p>We're excited to announce the launch of our completely redesigned platform with new features and improved user experience. This major update includes enhanced course tracking, a new community forum, and improved resource management tools.</p>
+                        <p>The update also brings performance improvements and mobile optimizations to ensure you have the best experience across all devices. All existing users will find their accounts and progress seamlessly migrated to the new platform.</p>
+                        <a href="news-single.html" class="btn">Read Full Story</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Grid -->
+        <section class="news-grid-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Recent <span class="orange-text">Updates</span></h2>
+                    <div class="sort-options">
+                        <label for="sort-news">Sort by:</label>
+                        <select id="sort-news">
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="popular">Most Popular</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="news-grid">
+                    <div class="news-card" data-category="updates">
+                        <div class="news-image">
+                            <img src="https://via.placeholder.com/400x250" alt="News 1">
+                        </div>
+                        <div class="news-content">
+                            <span class="news-category orange-text">Platform Update</span>
+                            <span class="news-date">June 18, 2023</span>
+                            <h3>New Course: Advanced React for Freelancers</h3>
+                            <p>Our latest course is now available, focusing on React best practices for freelance developers looking to enhance their skills and marketability.</p>
+                            <a href="news-single.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="news-card" data-category="events">
+                        <div class="news-image">
+                            <img src="https://via.placeholder.com/400x250" alt="News 2">
+                        </div>
+                        <div class="news-content">
+                            <span class="news-category orange-text">Event</span>
+                            <span class="news-date">June 15, 2023</span>
+                            <h3>Community Meetup Announcement</h3>
+                            <p>Join us for our next virtual meetup where we'll discuss freelancing trends in 2023 and network with fellow professionals.</p>
+                            <a href="news-single.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="news-card" data-category="partnerships">
+                        <div class="news-image">
+                            <img src="https://via.placeholder.com/400x250" alt="News 3">
+                        </div>
+                        <div class="news-content">
+                            <span class="news-category orange-text">Partnership</span>
+                            <span class="news-date">June 12, 2023</span>
+                            <h3>New Partnership With Tech Giant</h3>
+                            <p>Freelancer's Colony partners with a major tech company to offer exclusive resources and discounts to our community members.</p>
+                            <a href="news-single.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="news-card" data-category="announcements">
+                        <div class="news-image">
+                            <img src="https://via.placeholder.com/400x250" alt="News 4">
+                        </div>
+                        <div class="news-content">
+                            <span class="news-category orange-text">Announcement</span>
+                            <span class="news-date">June 8, 2023</span>
+                            <h3>New Pricing Structure for Premium Members</h3>
+                            <p>We've updated our pricing to offer more flexible options for freelancers at different stages of their careers.</p>
+                            <a href="news-single.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="news-card" data-category="updates">
+                        <div class="news-image">
+                            <img src="https://via.placeholder.com/400x250" alt="News 5">
+                        </div>
+                        <div class="news-content">
+                            <span class="news-category orange-text">Platform Update</span>
+                            <span class="news-date">June 5, 2023</span>
+                            <h3>Mobile App Now Available</h3>
+                            <p>Access Freelancer's Colony on the go with our new mobile app, available for both iOS and Android devices.</p>
+                            <a href="news-single.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="news-card" data-category="events">
+                        <div class="news-image">
+                            <img src="https://via.placeholder.com/400x250" alt="News 6">
+                        </div>
+                        <div class="news-content">
+                            <span class="news-category orange-text">Event</span>
+                            <span class="news-date">June 1, 2023</span>
+                            <h3>Live Q&A Session with Michael Edet</h3>
+                            <p>Join our founder for a live Q&A session where he'll answer your questions about freelancing and building a successful career.</p>
+                            <a href="news-single.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pagination">
+                    <a href="#" class="page-nav disabled"><i class="fas fa-chevron-left"></i> Previous</a>
+                    <div class="page-numbers">
+                        <a href="#" class="active">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                    </div>
+                    <a href="#" class="page-nav">Next <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h2>Never Miss an Update</h2>
+                    <p>Subscribe to our newsletter to get the latest news and updates from Freelancer's Colony delivered straight to your inbox.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                    <p class="small-text">We respect your privacy. Unsubscribe at any time.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Freelancer's Colony</h3>
+                    <p>A comprehensive platform for freelancers offering resources, education, and community support.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="education.html">Education Hub</a></li>
+                        <li><a href="content.html">Content Creation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope orange-text"></i> hello@freelancerscolony.com</li>
+                        <li><i class="fas fa-phone orange-text"></i> +1 (234) 567-8901</li>
+                        <li><i class="fas fa-map-marker-alt orange-text"></i> Lagos, Nigeria</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Freelancer's Colony. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+    <script>
+        // News Category Filtering
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryTabs = document.querySelectorAll('.category-tab');
+            const newsCards = document.querySelectorAll('.news-card');
+            
+            categoryTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active class from all tabs
+                    categoryTabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    
+                    const category = this.getAttribute('data-category');
+                    
+                    // Filter news cards
+                    newsCards.forEach(card => {
+                        if (category === 'all' || card.getAttribute('data-category') === category) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Sort news functionality
+            const sortSelect = document.getElementById('sort-news');
+            if (sortSelect) {
+                sortSelect.addEventListener('change', function() {
+                    // In a real implementation, this would sort the news items
+                    // For this example, we'll just show an alert
+                    alert('News items would be sorted by ' + this.value);
+                });
+            }
+            
+            // Set current year in footer
+            document.getElementById('year').textContent = new Date().getFullYear();
+            
+            // Newsletter Form Submission
+            const newsletterForm = document.querySelector('.newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const emailInput = this.querySelector('input[type="email"]');
+                    alert('Thank you for subscribing to our newsletter!');
+                    emailInput.value = '';
+                });
+            }
+            
+            // Mobile Menu Toggle
+            const menuIcon = document.getElementById('menuIcon');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            if (menuIcon && mobileMenu) {
+                menuIcon.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                });
+                
+                // Close mobile menu when clicking on a link
+                const mobileLinks = mobileMenu.querySelectorAll('a');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenu.classList.remove('active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

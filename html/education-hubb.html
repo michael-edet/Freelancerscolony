@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Hub | Freelancer's Colony</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/education-hub.css">
+</head>
+<body>
+    <!-- Fixed Header -->
+    <header class="fixed-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><span class="orange-text">Freelancer's</span> Colony</a>
+            </div>
+            
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="store.html">Store</a></li>
+                    <li><a href="education.html" class="active">Education Hub</a></li>
+                    <li><a href="content.html">Content Creation</a></li>
+                    <li><a href="news.html">News/Updates</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+                
+                <div class="menu-icon" id="menuIcon">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="store.html">Store</a></li>
+                <li><a href="education.html" class="active">Education Hub</a></li>
+                <li><a href="content.html">Content Creation</a></li>
+                <li><a href="news.html">News/Updates</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="education-page">
+        <!-- Hero Section -->
+        <section class="education-hero">
+            <div class="container">
+                <h1>Education <span class="orange-text">Hub</span></h1>
+                <p>Expand your skills with our comprehensive courses, tutorials, and workshops designed for freelancers at all levels.</p>
+                <div class="search-box">
+                    <input type="text" placeholder="Search for courses, tutorials...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Hub Section -->
+        <section class="education-section">
+            <div class="container">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="courses">Courses</button>
+                    <button class="tab-btn" data-tab="tutorials">Tutorials</button>
+                    <button class="tab-btn" data-tab="workshops">Workshops</button>
+                </div>
+                
+                <div class="tab-content active" id="courses">
+                    <div class="section-header">
+                        <h2>Featured <span class="orange-text">Courses</span></h2>
+                        <div class="filter-options">
+                            <select>
+                                <option>All Categories</option>
+                                <option>Web Development</option>
+                                <option>Design</option>
+                                <option>Marketing</option>
+                                <option>Business</option>
+                            </select>
+                            <select>
+                                <option>Sort by Popularity</option>
+                                <option>Sort by Newest</option>
+                                <option>Sort by Price</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="courses-grid">
+                        <div class="course-card">
+                            <img src="https://via.placeholder.com/350x200" alt="Course 1">
+                            <div class="course-info">
+                                <span class="category orange-text">Freelancing</span>
+                                <h3>Freelancing Masterclass</h3>
+                                <p>Learn how to build a successful freelancing career from scratch.</p>
+                                <div class="course-meta">
+                                    <span><i class="fas fa-star orange-text"></i> 4.9 (120)</span>
+                                    <span><i class="fas fa-clock orange-text"></i> 12 hrs</span>
+                                    <span class="price">$99.99</span>
+                                </div>
+                                <a href="#" class="btn btn-small">Enroll Now</a>
+                            </div>
+                        </div>
+                        <div class="course-card">
+                            <img src="https://via.placeholder.com/350x200" alt="Course 2">
+                            <div class="course-info">
+                                <span class="category orange-text">Development</span>
+                                <h3>Web Development Bootcamp</h3>
+                                <p>Complete guide to modern web development technologies.</p>
+                                <div class="course-meta">
+                                    <span><i class="fas fa-star orange-text"></i> 4.8 (95)</span>
+                                    <span><i class="fas fa-clock orange-text"></i> 25 hrs</span>
+                                    <span class="price">$149.99</span>
+                                </div>
+                                <a href="#" class="btn btn-small">Enroll Now</a>
+                            </div>
+                        </div>
+                        <div class="course-card">
+                            <img src="https://via.placeholder.com/350x200" alt="Course 3">
+                            <div class="course-info">
+                                <span class="category orange-text">Content</span>
+                                <h3>Content Creation Pro</h3>
+                                <p>Master content creation for social media and digital platforms.</p>
+                                <div class="course-meta">
+                                    <span><i class="fas fa-star orange-text"></i> 4.7 (80)</span>
+                                    <span><i class="fas fa-clock orange-text"></i> 15 hrs</span>
+                                    <span class="price">$79.99</span>
+                                </div>
+                                <a href="#" class="btn btn-small">Enroll Now</a>
+                            </div>
+                        </div>
+                        <div class="course-card">
+                            <img src="https://via.placeholder.com/350x200" alt="Course 4">
+                            <div class="course-info">
+                                <span class="category orange-text">Design</span>
+                                <h3>UI/UX Design Fundamentals</h3>
+                                <p>Learn the principles of user interface and experience design.</p>
+                                <div class="course-meta">
+                                    <span><i class="fas fa-star orange-text"></i> 4.6 (65)</span>
+                                    <span><i class="fas fa-clock orange-text"></i> 10 hrs</span>
+                                    <span class="price">$89.99</span>
+                                </div>
+                                <a href="#" class="btn btn-small">Enroll Now</a>
+                            </div>
+                        </div>
+                        <div class="course-card">
+                            <img src="https://via.placeholder.com/350x200" alt="Course 5">
+                            <div class="course-info">
+                                <span class="category orange-text">Marketing</span>
+                                <h3>Digital Marketing Strategy</h3>
+                                <p>Develop effective digital marketing campaigns for clients.</p>
+                                <div class="course-meta">
+                                    <span><i class="fas fa-star orange-text"></i> 4.5 (75)</span>
+                                    <span><i class="fas fa-clock orange-text"></i> 8 hrs</span>
+                                    <span class="price">$69.99</span>
+                                </div>
+                                <a href="#" class="btn btn-small">Enroll Now</a>
+                            </div>
+                        </div>
+                        <div class="course-card">
+                            <img src="https://via.placeholder.com/350x200" alt="Course 6">
+                            <div class="course-info">
+                                <span class="category orange-text">Business</span>
+                                <h3>Freelance Finance Management</h3>
+                                <p>Manage your finances and taxes as a freelancer.</p>
+                                <div class="course-meta">
+                                    <span><i class="fas fa-star orange-text"></i> 4.8 (55)</span>
+                                    <span><i class="fas fa-clock orange-text"></i> 6 hrs</span>
+                                    <span class="price">$59.99</span>
+                                </div>
+                                <a href="#" class="btn btn-small">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pagination">
+                        <a href="#" class="page-nav"><i class="fas fa-chevron-left"></i> Previous</a>
+                        <div class="page-numbers">
+                            <a href="#" class="active">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#">4</a>
+                            <a href="#">5</a>
+                        </div>
+                        <a href="#" class="page-nav">Next <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="tutorials">
+                    <div class="section-header">
+                        <h2>Featured <span class="orange-text">Tutorials</span></h2>
+                        <div class="filter-options">
+                            <select>
+                                <option>All Categories</option>
+                                <option>Web Development</option>
+                                <option>Design</option>
+                                <option>Marketing</option>
+                                <option>Business</option>
+                            </select>
+                            <select>
+                                <option>Sort by Popularity</option>
+                                <option>Sort by Newest</option>
+                                <option>Sort by Duration</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorials-grid">
+                        <div class="tutorial-card">
+                            <div class="tutorial-video">
+                                <img src="https://via.placeholder.com/350x200" alt="Tutorial 1">
+                                <div class="play-btn"><i class="fas fa-play"></i></div>
+                                <span class="duration">15:30</span>
+                            </div>
+                            <div class="tutorial-info">
+                                <span class="category orange-text">Freelancing</span>
+                                <h3>Getting Your First Client</h3>
+                                <p>Learn proven strategies to land your first freelance client.</p>
+                                <div class="tutorial-meta">
+                                    <span><i class="fas fa-eye orange-text"></i> 1.2K views</span>
+                                    <span><i class="fas fa-clock orange-text"></i> 15 min</span>
+                                </div>
+                                <a href="#" class="btn btn-small">Watch Now</a>
+                            </div>
+                        </div>
+                        <div class="tutorial-card">
+                            <div class="tutorial-video">
+                                <img src="https://via.placeholder.com/350x200" alt="Tutorial 2">
+                                <div class="play-btn"><i class="fas fa-play"></i></div>
+                                <span class="duration">12:45</span>
+                            </div>
+                            <div class="tutorial-info">
+                                <span class="category orange-text">Portfolio</span>
+                                <h3>Setting Up Your Portfolio</h3>
+                                <p>Create an impressive portfolio that attracts clients.</p>
+                                <div class="tutorial-meta">
+                                    <span><i class="fas fa-eye orange-text"></i> 950 views</span>
+                                    <span><i class="fas fa-clock orange-text"></i> 12 min</span>
+                                </div>
+                                <a href="#" class="btn btn-small">Watch Now</a>
+                            </div>
+                        </div>
+                        <div class="tutorial-card">
+                            <div class="tutorial-video">
+                                <img src="https://via.placeholder.com/350x200" alt="Tutorial 3">
+                                <div class="play-btn"><i class="fas fa-play"></i></div>
+                                <span class="duration">18:20</span>
+                            </div>
+                            <div class="tutorial-info">
+                                <span class="category orange-text">Business</span>
+                                <h3>Pricing Your Services</h3>
+                                <p>How to price your freelance services competitively.</p>
+                                <div class="tutorial-meta">
+                                    <span><i class="fas fa-eye orange-text"></i> 1.5K views</span>
+                                    <span><i class="fas fa-clock orange-text"></i> 18 min</span>
+                                </div>
+                                <a href="#" class="btn btn-small">Watch Now</a>
+                            </div>
+                        </div>
+                        <div class="tutorial-card">
+                            <div class="tutorial-video">
+                                <img src="https://via.placeholder.com/350x200" alt="Tutorial 4">
+                                <div class="play-btn"><i class="fas fa-play"></i></div>
+                                <span class="duration">22:10</span>
+                            </div>
+                            <div class="tutorial-info">
+                                <span class="category orange-text">Development</span>
+                                <h3>Building a Personal Website</h3>
+                                <p>Step-by-step guide to creating your own website.</p>
+                                <div class="tutorial-meta">
+                                    <span><i class="fas fa-eye orange-text"></i> 2.1K views</span>
+                                    <span><i class="fas fa-clock orange-text"></i> 22 min</span>
+                                </div>
+                                <a href="#" class="btn btn-small">Watch Now</a>
+                            </div>
+                        </div>
+                        <div class="tutorial-card">
+                            <div class="tutorial-video">
+                                <img src="https://via.placeholder.com/350x200" alt="Tutorial 5">
+                                <div class="play-btn"><i class="fas fa-play"></i></div>
+                                <span class="duration">14:35</span>
+                            </div>
+                            <div class="tutorial-info">
+                                <span class="category orange-text">Marketing</span>
+                                <h3>Social Media for Freelancers</h3>
+                                <p>Leverage social media to grow your freelance business.</p>
+                                <div class="tutorial-meta">
+                                    <span><i class="fas fa-eye orange-text"></i> 1.8K views</span>
+                                    <span><i class="fas fa-clock orange-text"></i> 14 min</span>
+                                </div>
+                                <a href="#" class="btn btn-small">Watch Now</a>
+                            </div>
+                        </div>
+                        <div class="tutorial-card">
+                            <div class="tutorial-video">
+                                <img src="https://via.placeholder.com/350x200" alt="Tutorial 6">
+                                <div class="play-btn"><i class="fas fa-play"></i></div>
+                                <span class="duration">16:50</span>
+                            </div>
+                            <div class="tutorial-info">
+                                <span class="category orange-text">Productivity</span>
+                                <h3>Time Management Techniques</h3>
+                                <p>Boost your productivity with these time management tips.</p>
+                                <div class="tutorial-meta">
+                                    <span><i class="fas fa-eye orange-text"></i> 1.3K views</span>
+                                    <span><i class="fas fa-clock orange-text"></i> 16 min</span>
+                                </div>
+                                <a href="#" class="btn btn-small">Watch Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pagination">
+                        <a href="#" class="page-nav"><i class="fas fa-chevron-left"></i> Previous</a>
+                        <div class="page-numbers">
+                            <a href="#" class="active">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#">4</a>
+                            <a href="#">5</a>
+                        </div>
+                        <a href="#" class="page-nav">Next <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="workshops">
+                    <div class="section-header">
+                        <h2>Upcoming <span class="orange-text">Workshops</span></h2>
+                        <div class="filter-options">
+                            <select>
+                                <option>All Categories</option>
+                                <option>Web Development</option>
+                                <option>Design</option>
+                                <option>Marketing</option>
+                                <option>Business</option>
+                            </select>
+                            <select>
+                                <option>Sort by Date</option>
+                                <option>Sort by Popularity</option>
+                                <option>Sort by Price</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="workshops-grid">
+                        <div class="workshop-card">
+                            <div class="workshop-date">
+                                <span class="day">15</span>
+                                <span class="month">JUL</span>
+                            </div>
+                            <div class="workshop-info">
+                                <span class="category orange-text">Finance</span>
+                                <h3>Freelancer Finance Workshop</h3>
+                                <p>Learn how to manage your finances as a freelancer.</p>
+                                <div class="workshop-meta">
+                                    <span><i class="fas fa-clock orange-text"></i> 2:00 PM GMT</span>
+                                    <span><i class="fas fa-users orange-text"></i> 45 seats left</span>
+                                    <span class="price">$29.99</span>
+                                </div>
+                                <a href="#" class="btn btn-small">Register</a>
+                            </div>
+                        </div>
+                        <div class="workshop-card">
+                            <div class="workshop-date">
+                                <span class="day">22</span>
+                                <span class="month">JUL</span>
+                            </div>
+                            <div class="workshop-info">
+                                <span class="category orange-text">Communication</span>
+                                <h3>Client Communication Mastery</h3>
+                                <p>Improve your client communication skills for better results.</p>
+                                <div class="workshop-meta">
+                                    <span><i class="fas fa-clock orange-text"></i> 3:00 PM GMT</span>
+                                    <span><i class="fas fa-users orange-text"></i> 32 seats left</span>
+                                    <span class="price">$24.99</span>
+                                </div>
+                                <a href="#" class="btn btn-small">Register</a>
+                            </div>
+                        </div>
+                        <div class="workshop-card">
+                            <div class="workshop-date">
+                                <span class="day">29</span>
+                                <span class="month">JUL</span>
+                            </div>
+                            <div class="workshop-info">
+                                <span class="category orange-text">Productivity</span>
+                                <h3>Productivity for Freelancers</h3>
+                                <p>Boost your productivity with proven techniques.</p>
+                                <div class="workshop-meta">
+                                    <span><i class="fas fa-clock orange-text"></i> 1:00 PM GMT</span>
+                                    <span><i class="fas fa-users orange-text"></i> 28 seats left</span>
+                                    <span class="price">$19.99</span>
+                                </div>
+                                <a href="#" class="btn btn-small">Register</a>
+                            </div>
+                        </div>
+                        <div class="workshop-card">
+                            <div class="workshop-date">
+                                <span class="day">05</span>
+                                <span class="month">AUG</span>
+                            </div>
+                            <div class="workshop-info">
+                                <span class="category orange-text">Development</span>
+                                <h3>Advanced JavaScript Techniques</h3>
+                                <p>Take your JavaScript skills to the next level.</p>
+                                <div class="workshop-meta">
+                                    <span><i class="fas fa-clock orange-text"></i> 4:00 PM GMT</span>
+                                    <span><i class="fas fa-users orange-text"></i> 50 seats left</span>
+                                    <span class="price">$34.99</span>
+                                </div>
+                                <a href="#" class="btn btn-small">Register</a>
+                            </div>
+                        </div>
+                        <div class="workshop-card">
+                            <div class="workshop-date">
+                                <span class="day">12</span>
+                                <span class="month">AUG</span>
+                            </div>
+                            <div class="workshop-info">
+                                <span class="category orange-text">Design</span>
+                                <h3>UI/UX Design Principles</h3>
+                                <p>Learn essential design principles for digital products.</p>
+                                <div class="workshop-meta">
+                                    <span><i class="fas fa-clock orange-text"></i> 11:00 AM GMT</span>
+                                    <span><i class="fas fa-users orange-text"></i> 35 seats left</span>
+                                    <span class="price">$27.99</span>
+                                </div>
+                                <a href="#" class="btn btn-small">Register</a>
+                            </div>
+                        </div>
+                        <div class="workshop-card">
+                            <div class="workshop-date">
+                                <span class="day">19</span>
+                                <span class="month">AUG</span>
+                            </div>
+                            <div class="workshop-info">
+                                <span class="category orange-text">Marketing</span>
+                                <h3>Digital Marketing Strategies</h3>
+                                <p>Effective marketing strategies for freelancers.</p>
+                                <div class="workshop-meta">
+                                    <span><i class="fas fa-clock orange-text"></i> 2:00 PM GMT</span>
+                                    <span><i class="fas fa-users orange-text"></i> 40 seats left</span>
+                                    <span class="price">$29.99</span>
+                                </div>
+                                <a href="#" class="btn btn-small">Register</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pagination">
+                        <a href="#" class="page-nav"><i class="fas fa-chevron-left"></i> Previous</a>
+                        <div class="page-numbers">
+                            <a href="#" class="active">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                        </div>
+                        <a href="#" class="page-nav">Next <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits">
+            <div class="container">
+                <h2 class="section-title">Why Learn With <span class="orange-text">Freelancer's Colony</span></h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chalkboard-teacher orange-text"></i>
+                        </div>
+                        <h3>Expert Instructors</h3>
+                        <p>Learn from industry professionals with years of real-world experience.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-laptop-code orange-text"></i>
+                        </div>
+                        <h3>Practical Skills</h3>
+                        <p>Gain hands-on experience with practical, project-based learning.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-users orange-text"></i>
+                        </div>
+                        <h3>Community Support</h3>
+                        <p>Join a community of like-minded freelancers for support and networking.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-certificate orange-text"></i>
+                        </div>
+                        <h3>Certification</h3>
+                        <p>Earn certificates to showcase your skills to clients and employers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="section-title">What Our <span class="orange-text">Students Say</span></h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="rating">
+                                <i class="fas fa-star orange-text"></i>
+                                <i class="fas fa-star orange-text"></i>
+                                <i class="fas fa-star orange-text"></i>
+                                <i class="fas fa-star orange-text"></i>
+                                <i class="fas fa-star orange-text"></i>
+                            </div>
+                            <p>"The Freelancing Masterclass completely transformed how I approach my business. I doubled my income within 3 months!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://via.placeholder.com/60" alt="Sarah J.">
+                            <div>
+                                <h4>Sarah J.</h4>
+                                <span>Graphic Designer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="rating">
+                                <i class="fas fa-star orange-text"></i>
+                                <i class="fas fa-star orange-text"></i>
+                                <i class="fas fa-star orange-text"></i>
+                                <i class="fas fa-star orange-text"></i>
+                                <i class="fas fa-star orange-text"></i>
+                            </div>
+                            <p>"The Web Development Bootcamp gave me the skills and confidence to start taking on higher-paying projects."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://via.placeholder.com/60" alt="Michael T.">
+                            <div>
+                                <h4>Michael T.</h4>
+                                <span>Web Developer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="rating">
+                                <i class="fas fa-star orange-text"></i>
+                                <i class="fas fa-star orange-text"></i>
+                                <i class="fas fa-star orange-text"></i>
+                                <i class="fas fa-star orange-text"></i>
+                                <i class="fas fa-star orange-text"></i>
+                            </div>
+                            <p>"The workshops are incredibly valuable. I've implemented strategies that have improved my client relationships significantly."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://via.placeholder.com/60" alt="Priya K.">
+                            <div>
+                                <h4>Priya K.</h4>
+                                <span>Digital Marketer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h2>Stay Updated on New Courses</h2>
+                    <p>Subscribe to our newsletter to be the first to know about new courses, tutorials, and workshops.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Freelancer's Colony</h3>
+                    <p>A comprehensive platform for freelancers offering resources, education, and community support.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="education.html">Education Hub</a></li>
+                        <li><a href="content.html">Content Creation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope orange-text"></i> hello@freelancerscolony.com</li>
+                        <li><i class="fas fa-phone orange-text"></i> +1 (234) 567-8901</li>
+                        <li><i class="fas fa-map-marker-alt orange-text"></i> Lagos, Nigeria</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Freelancer's Colony. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+<script src="/js/education-hub.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>

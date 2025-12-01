@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelancer Finance Workshop | Education Hub | Freelancer's Colony</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        /* Simplified Workshop Styles */
+        .workshop-hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1200x600') center/cover;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        
+        .workshop-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .workshop-badge {
+            background: #FF6B00;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .workshop-title {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .workshop-meta {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            color: white;
+        }
+        
+        .workshop-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .workshop-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .detail-card {
+            padding: 20px;
+            border-left: 3px solid #FF6B00;
+            background: #f9f9f9;
+        }
+        
+        .workshop-content h2 {
+            color: #000;
+            margin: 30px 0 20px;
+            font-size: 1.5rem;
+        }
+        
+        .workshop-content p {
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .workshop-content ul {
+            margin-bottom: 30px;
+            padding-left: 20px;
+        }
+        
+        .workshop-content li {
+            margin-bottom: 10px;
+        }
+        
+        .registration-box {
+            background: #000;
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 50px 0;
+        }
+        
+        .workshop-price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #FF6B00;
+            margin: 20px 0;
+        }
+        
+        .instructor-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin: 50px 0;
+            padding: 30px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+        
+        .instructor-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .newsletter-section {
+            background: #000;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 768px) {
+            .workshop-title {
+                font-size: 1.8rem;
+            }
+            
+            .workshop-meta {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .workshop-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .instructor-card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed Header -->
+    <header class="fixed-header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html"><span class="orange-text">Freelancer's</span> Colony</a>
+            </div>
+            
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../education.html">Education Hub</a></li>
+                    <li><a href="../workshops.html">Workshops</a></li>
+                    <li><a href="../about.html">About</a></li>
+                </ul>
+                
+                <div class="menu-icon" id="menuIcon">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../education.html">Education Hub</a></li>
+                <li><a href="../workshops.html">Workshops</a></li>
+                <li><a href="../about.html">About</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Workshop Hero -->
+    <section class="workshop-hero">
+        <div class="container">
+            <span class="workshop-badge">Live Workshop</span>
+            <h1 class="workshop-title">Freelancer Finance Mastery</h1>
+            <p>Learn how to manage your finances, taxes, and pricing as a freelancer</p>
+            <div class="workshop-meta">
+                <span><i class="far fa-calendar orange-text"></i> July 15, 2023</span>
+                <span><i class="far fa-clock orange-text"></i> 2:00 PM GMT</span>
+                <span><i class="fas fa-users orange-text"></i> 45 seats left</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <div class="workshop-container">
+            <div class="workshop-card">
+                <div class="workshop-content">
+                    <h2>Workshop Overview</h2>
+                    <p>This intensive 2-hour workshop will transform how you manage your freelance finances. Whether you're just starting or have been freelancing for years, you'll leave with actionable strategies to:</p>
+                    
+                    <ul>
+                        <li>Set optimal pricing for your services</li>
+                        <li>Manage cash flow effectively</li>
+                        <li>Prepare for tax season</li>
+                        <li>Plan for retirement as a freelancer</li>
+                    </ul>
+                    
+                    <div class="workshop-details">
+                        <div class="detail-card">
+                            <h3><i class="fas fa-chalkboard-teacher orange-text"></i> Format</h3>
+                            <p>Live online session with Q&A</p>
+                        </div>
+                        <div class="detail-card">
+                            <h3><i class="fas fa-clock orange-text"></i> Duration</h3>
+                            <p>2 hours + 30 min Q&A</p>
+                        </div>
+                        <div class="detail-card">
+                            <h3><i class="fas fa-gift orange-text"></i> Includes</h3>
+                            <p>Workbook & templates</p>
+                        </div>
+                    </div>
+                    
+                    <h2>What You'll Learn</h2>
+                    
+                    <h3>Financial Foundations</h3>
+                    <ul>
+                        <li>Setting up your freelance business finances</li>
+                        <li>Essential accounting tools and software</li>
+                        <li>Separating personal and business finances</li>
+                    </ul>
+                    
+                    <h3>Pricing Strategies</h3>
+                    <ul>
+                        <li>Value-based pricing models</li>
+                        <li>When and how to raise your rates</li>
+                        <li>Handling client budgets and negotiations</li>
+                    </ul>
+                    
+                    <h3>Tax Preparation</h3>
+                    <ul>
+                        <li>Quarterly tax payments explained</li>
+                        <li>Deductions every freelancer should know</li>
+                        <li>Working with accountants</li>
+                    </ul>
+                    
+                    <h3>Long-Term Planning</h3>
+                    <ul>
+                        <li>Retirement options for freelancers</li>
+                        <li>Building an emergency fund</li>
+                        <li>Insurance considerations</li>
+                    </ul>
+                    
+                    <div class="registration-box">
+                        <h2>Reserve Your Spot</h2>
+                        <p>Join us for this transformative workshop</p>
+                        <div class="workshop-price">$49.99</div>
+                        <a href="#" class="btn">Register Now</a>
+                        <p class="small-text">Recording available for attendees</p>
+                    </div>
+                    
+                    <div class="instructor-card">
+                        <img src="https://via.placeholder.com/150" alt="Michael Edet" class="instructor-img">
+                        <div>
+                            <h3>About the Instructor</h3>
+                            <p><strong>Michael Edet</strong> is a financial expert who has helped thousands of freelancers master their finances. With 8+ years of freelancing experience, he knows exactly what financial challenges freelancers face.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Newsletter Section -->
+        <section class="newsletter-section">
+            <div class="newsletter-content">
+                <h2>Want More Freelancing Workshops?</h2>
+                <p>Subscribe to be notified about upcoming workshops and get exclusive resources.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Freelancer's Colony</h3>
+                    <p>Your partner in freelancing success.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../education.html">Education Hub</a></li>
+                        <li><a href="../workshops.html">Workshops</a></li>
+                        <li><a href="../resources.html">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Freelancer's Colony. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('menuIcon').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        });
+        
+        // Registration Button
+        document.querySelector('.registration-box .btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Redirecting to registration page...');
+        });
+        
+        // Newsletter Form Submission
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for subscribing! We\'ll notify you about upcoming workshops.');
+            this.reset();
+        });
+        
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

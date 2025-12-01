@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step-by-Step Guide | Freelancer's Colony</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #FF6B00;
+            --white-color: #FFFFFF;
+            --light-gray: #F5F5F5;
+            --dark-gray: #333333;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--primary-color);
+            background-color: var(--white-color);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        .post-header {
+            padding: 80px 0 40px;
+            text-align: center;
+            background-color: var(--light-gray);
+        }
+
+        .post-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .post-meta {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+
+        .post-author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+        }
+
+        /* Step-by-Step Content */
+        .step-container {
+            padding: 60px 0;
+        }
+
+        .step {
+            margin-bottom: 60px;
+            counter-increment: step-counter;
+            position: relative;
+        }
+
+        .step:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-number {
+            position: absolute;
+            left: -50px;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .step-content {
+            padding-left: 30px;
+            border-left: 2px solid var(--secondary-color);
+            position: relative;
+        }
+
+        .step-content::before {
+            content: "";
+            position: absolute;
+            left: -6px;
+            top: 10px;
+            width: 10px;
+            height: 10px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+        }
+
+        .step-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .step-description {
+            margin-bottom: 25px;
+            color: var(--dark-gray);
+        }
+
+        .step-image {
+            margin: 25px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .step-image img:hover {
+            transform: scale(1.02);
+        }
+
+        .step-image-caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* Video Tutorial Section */
+        .video-tutorial {
+            padding: 60px 0;
+            background-color: var(--light-gray);
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Tools & Materials Section */
+        .tools-section {
+            padding: 40px 0;
+            background-color: var(--white-color);
+            margin-bottom: 40px;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .tool-item {
+            background-color: var(--light-gray);
+            padding: 20px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: var(--transition);
+        }
+
+        .tool-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .tool-icon {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .post-title {
+                font-size: 2rem;
+            }
+
+            .step {
+                margin-bottom: 40px;
+            }
+
+            .step-number {
+                left: -40px;
+                width: 30px;
+                height: 30px;
+                font-size: 1rem;
+            }
+
+            .step-title {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .post-header {
+                padding: 60px 0 30px;
+            }
+
+            .post-title {
+                font-size: 1.8rem;
+            }
+
+            .post-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .step-number {
+                position: static;
+                margin-bottom: 15px;
+            }
+
+            .step-content {
+                padding-left: 0;
+                border-left: none;
+            }
+
+            .step-content::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Post Header -->
+    <header class="post-header">
+        <div class="container">
+            <h1 class="post-title">Complete Guide to Creating a Professional Portfolio Website</h1>
+            <div class="post-meta">
+                <span><i class="far fa-calendar"></i> Published: June 15, 2023</span>
+                <span><i class="far fa-clock"></i> Reading Time: 15 min</span>
+                <span><i class="fas fa-tags"></i> Category: Web Development</span>
+            </div>
+            <div class="post-author">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Edet" class="author-avatar">
+                <div class="author-info">
+                    <h4>Michael Edet</h4>
+                    <p>Professional Web Developer & Instructor</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Tools & Materials Section -->
+    <section class="tools-section">
+        <div class="container">
+            <h2 class="section-title">Tools & Requirements</h2>
+            <div class="tools-grid">
+                <div class="tool-item">
+                    <div class="tool-icon"><i class="fas fa-laptop"></i></div>
+                    <div>
+                        <h4>Computer</h4>
+                        <p>Windows/Mac/Linux</p>
+                    </div>
+                </div>
+                <div class="tool-item">
+                    <div class="tool-icon"><i class="fas fa-code"></i></div>
+                    <div>
+                        <h4>Code Editor</h4>
+                        <p>VS Code recommended</p>
+                    </div>
+                </div>
+                <div class="tool-item">
+                    <div class="tool-icon"><i class="fas fa-globe"></i></div>
+                    <div>
+                        <h4>Web Browser</h4>
+                        <p>Chrome or Firefox</p>
+                    </div>
+                </div>
+                <div class="tool-item">
+                    <div class="tool-icon"><i class="fas fa-image"></i></div>
+                    <div>
+                        <h4>Project Assets</h4>
+                        <p>Images, text content</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Step-by-Step Content -->
+    <section class="step-container">
+        <div class="container">
+            <h2 class="section-title">Step-by-Step Guide</h2>
+
+            <!-- Step 1 -->
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3 class="step-title">Plan Your Portfolio Structure</h3>
+                    <p class="step-description">
+                        Before writing any code, sketch out the structure of your portfolio. Decide which sections you need: 
+                        Home, About, Projects, Services, Testimonials, and Contact are common. Create a simple wireframe 
+                        to visualize the layout.
+                    </p>
+                    <div class="step-image">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Portfolio wireframe sketch">
+                        <p class="step-image-caption">Figure 1: Example wireframe for portfolio structure</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3 class="step-title">Set Up Your Development Environment</h3>
+                    <p class="step-description">
+                        Create a new project folder and set up your basic file structure. You'll need an index.html file, 
+                        a CSS folder with a style.css file, and a JavaScript folder if you plan to add interactivity. 
+                        Initialize your code editor and create a Git repository if using version control.
+                    </p>
+                    <div class="step-image">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Project folder structure">
+                        <p class="step-image-caption">Figure 2: Recommended folder structure for web projects</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3 class="step-title">Create the Basic HTML Structure</h3>
+                    <p class="step-description">
+                        Start with the HTML5 boilerplate and set up your semantic HTML structure. Include header, main, 
+                        and footer sections. Add meta tags for SEO and responsive viewport settings. Create navigation 
+                        links to your main sections.
+                    </p>
+                    <div class="step-image">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="HTML code example">
+                        <p class="step-image-caption">Figure 3: Basic HTML5 boilerplate structure</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3 class="step-title">Design Your Header and Navigation</h3>
+                    <p class="step-description">
+                        Create an attractive header with your name/logo and a clean navigation menu. Make sure the navigation 
+                        is responsive and works well on mobile devices. Consider adding a hero section with a brief introduction 
+                        and call-to-action button.
+                    </p>
+                    <div class="step-image">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Portfolio header design">
+                        <p class="step-image-caption">Figure 4: Professional header design example</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h3 class="step-title">Build the About Section</h3>
+                    <p class="step-description">
+                        Craft a compelling about section that showcases your skills, experience, and personality. Include 
+                        a professional photo, brief bio, skills list, and any certifications. Keep it concise but informative.
+                    </p>
+                    <div class="step-image">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="About section example">
+                        <p class="step-image-caption">Figure 5: Effective about section layout</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 6 -->
+            <div class="step">
+                <div class="step-number">6</div>
+                <div class="step-content">
+                    <h3 class="step-title">Showcase Your Projects</h3>
+                    <p class="step-description">
+                        Create a projects section that highlights your best work. For each project, include a thumbnail, 
+                        title, brief description, technologies used, and links to live demo and code. Organize them in 
+                        a grid layout with filter options if you have many projects.
+                    </p>
+                    <div class="step-image">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Projects section example">
+                        <p class="step-image-caption">Figure 6: Project showcase layout options</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 7 -->
+            <div class="step">
+                <div class="step-number">7</div>
+                <div class="step-content">
+                    <h3 class="step-title">Add Testimonials and Client Feedback</h3>
+                    <p class="step-description">
+                        Social proof builds credibility. Include testimonials from clients, colleagues, or instructors. 
+                        Display them in a carousel or grid format with the person's photo, name, title, and quote. 
+                        Keep them genuine and specific.
+                    </p>
+                    <div class="step-image">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Testimonials section example">
+                        <p class="step-image-caption">Figure 7: Testimonial display styles</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 8 -->
+            <div class="step">
+                <div class="step-number">8</div>
+                <div class="step-content">
+                    <h3 class="step-title">Create a Contact Section</h3>
+                    <p class="step-description">
+                        Make it easy for potential clients to reach you. Include a contact form, your email address, 
+                        social media links, and possibly a phone number. Add a simple contact form with validation 
+                        that sends messages to your email.
+                    </p>
+                    <div class="step-image">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Contact form example">
+                        <p class="step-image-caption">Figure 8: Professional contact section design</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 9 -->
+            <div class="step">
+                <div class="step-number">9</div>
+                <div class="step-content">
+                    <h3 class="step-title">Implement Responsive Design</h3>
+                    <p class="step-description">
+                        Ensure your portfolio looks great on all devices. Use media queries to adjust layouts for different 
+                        screen sizes. Test on mobile, tablet, and desktop views. Pay special attention to navigation, 
+                        images, and typography scaling.
+                    </p>
+                    <div class="step-image">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Responsive design example">
+                        <p class="step-image-caption">Figure 9: Responsive design breakpoints</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 10 -->
+            <div class="step">
+                <div class="step-number">10</div>
+                <div class="step-content">
+                    <h3 class="step-title">Optimize and Deploy</h3>
+                    <p class="step-description">
+                        Before launching, optimize your images, minify CSS/JS, and check loading speed. Set up analytics 
+                        to track visitors. Choose a hosting provider (Netlify, Vercel, or GitHub Pages are good free options) 
+                        and deploy your portfolio.
+                    </p>
+                    <div class="step-image">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Deployment process">
+                        <p class="step-image-caption">Figure 10: Deployment options for static sites</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Tutorial Section -->
+    <section class="video-tutorial">
+        <div class="container">
+            <h2 class="section-title">Video Tutorial</h2>
+            <p>Watch the full tutorial demonstrating how to build this portfolio website step-by-step</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/ysEN5RaKOlA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Interactive elements for the step-by-step guide
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add animation to step numbers when they come into view
+            const steps = document.querySelectorAll('.step');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.querySelector('.step-number').style.transform = 'scale(1.1)';
+                        entry.target.querySelector('.step-number').style.backgroundColor = '#ff8c00';
+                        setTimeout(() => {
+                            entry.target.querySelector('.step-number').style.transform = 'scale(1)';
+                            entry.target.querySelector('.step-number').style.backgroundColor = 'var(--secondary-color)';
+                        }, 300);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            steps.forEach(step => {
+                observer.observe(step);
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Image zoom effect
+            const stepImages = document.querySelectorAll('.step-image img');
+            stepImages.forEach(img => {
+                img.addEventListener('click', function() {
+                    const overlay = document.createElement('div');
+                    overlay.style.position = 'fixed';
+                    overlay.style.top = '0';
+                    overlay.style.left = '0';
+                    overlay.style.width = '100%';
+                    overlay.style.height = '100%';
+                    overlay.style.backgroundColor = 'rgba(0,0,0,0.9)';
+                    overlay.style.display = 'flex';
+                    overlay.style.justifyContent = 'center';
+                    overlay.style.alignItems = 'center';
+                    overlay.style.zIndex = '1000';
+                    overlay.style.cursor = 'zoom-out';
+                    
+                    const zoomedImg = document.createElement('img');
+                    zoomedImg.src = this.src;
+                    zoomedImg.style.maxWidth = '90%';
+                    zoomedImg.style.maxHeight = '90%';
+                    zoomedImg.style.objectFit = 'contain';
+                    
+                    overlay.appendChild(zoomedImg);
+                    document.body.appendChild(overlay);
+                    
+                    overlay.addEventListener('click', function() {
+                        document.body.removeChild(overlay);
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
